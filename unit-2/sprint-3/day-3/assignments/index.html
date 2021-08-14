@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="l-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: rgb(21, 1, 39);
+
+        }
+
+        #btn button {
+            margin: 50px;
+            border-radius: 6px;
+            font-size: 20px;
+            padding: 50px;
+
+        }
+
+        #obj {
+
+            display: none;
+            background-color: blueviolet;
+            border-radius: 5px;
+            font-size: 20px;
+        }
+
+        #arr {
+
+            display: none;
+            background-color: blueviolet;
+            border-radius: 5px;
+            font-size: 20px;
+        }
+
+        #num {
+
+            display: none;
+            background-color: cadetblue;
+            border-radius: 5px;
+            font-size: 20px;
+        }
+
+        #str {
+
+            display: none;
+            background-color: cadetblue;
+            border-radius: 5px;
+            font-size: 20px;
+
+        }
+
+        #null {
+
+            display: none;
+            background-color: blueviolet;
+            border-radius: 5px;
+            font-size: 20px;
+        }
+
+        #undef {
+
+            display: none;
+            background-color: blueviolet;
+            border-radius: 5px;
+            font-size: 20px;
+        }
+
+        #fun {
+
+            display: none;
+            background-color: blueviolet;
+            border-radius: 5px;
+            font-size: 20px;
+        }
+
+        .btn1 {
+            background-color: aqua;
+        }
+
+        .btn2 {
+            background-color: aqua
+        }
+
+        .btn3 {
+            background-color: aqua
+        }
+
+        .btn4 {
+            background-color: khaki;
+        }
+
+        .btn5 {
+            background-color: khaki;
+        }
+
+        .btn6 {
+            background-color: palevioletred;
+        }
+
+        .btn7 {
+            background-color: palevioletred;
+
+        }
+
+        #btn code {
+
+            color: aliceblue;
+            font-family: Consolas, Monaco, Courier, monospace;
+        }
+
+        h1 {
+            text-align: center;
+            color: aliceblue;
+        }
+
+        h3 {
+            color: aliceblue;
+            font-size: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1> DATA TYPES IN JS</h1>
+    <div id="btn">
+        <h3>NoN-primitive Data types</h3>
+        <button class="btn1" onclick="objects()">Objects <br> ->Click here to learn about objects</button>
+        <div id="obj">The object is a complex data type that allows you to store collections of data.
+            <br>
+            An object contains properties, defined as a key-value pair. A property key (name) is always a string, but
+            the value can be any data type, like strings, numbers, booleans, or complex data types like arrays, function
+            and other objects. You'll learn more about objects in upcoming chapters.
+            <br>
+            The following example will show you the simplest way to create an object in JavaScript.
+            <br>
+            ExampleTry this code »<br>
+            <code>
+            var emptyObject = {};<br>
+            var person = {"name": "Clark", "surname": "Kent", "age": "36"};<br>
+            <br>
+            // For better reading<br>
+            var car = {<br>
+                "modal": "BMW X3",<br>
+                "color": "white",<br>
+                "doors": 5<br>
+            }<br>
+            </code>
+        </div>
+        <button class="btn2" onclick="Arrays()">Arrays <br> ->Click here to learn about Arrays</button>
+        <div id="arr">The Array Data Type 
+        <p>
+         An array is a type of object used for storing multiple values in single variable. Each value (also called an element) in an array has a numeric position, known as its index, and it may contain data of any data type-numbers, strings, booleans, functions, objects, and even other arrays. The array index starts from 0, so that the first array element is arr[0] not arr[1].
+        </p>
+            The simplest way to create an array is by specifying the array elements as a comma-separated list enclosed
+            by square brackets, as shown in the example below:
+            <br>
+            ExampleTry this code » <br>
+            <code>
+            var colors = ["Red", "Yellow", "Green", "Orange"]; <br>
+            var cities = ["London", "Paris", "New York"]; <br>
+ 
+            alert(colors[0]);   // Output: Red <br>
+            alert(cities[2]);   // Output: New York <br>
+            You will learn more about the arrays in JavaScript arrays chapter. <br>
+            </code>
+
+        </div>
+        <button class="btn3" onclick="Functions()">Functions <br> ->Click here to learn about Funtions</button>
+        <div id="fun">The Function Data Type <br>
+            The function is callable object that executes a block of code. Since functions are objects, so it is
+            possible to assign them to variables, as shown in the example below:
+            <br>
+            ExampleTry this code »
+            <br>
+            <code>
+            var greeting = function(){ <br>
+            return "Hello World!"; <br>
+            } <br>
+ 
+            // Check the type of greeting variable <br>
+            alert(typeof greeting) // Output: function <br>
+            alert(greeting());     // Output: Hello World! <br>
+            </code>
+        </div>
+        <br>
+        <h3>Primitive Data types</h3>
+        <button class="btn4" onclick="Strings()">Strings <br> ->Click here to learn about Strings</button>
+        <div id="str">The string data type is used to represent textual data (i.e. sequences of characters). Strings are created using single or double quotes surrounding one or more characters, as shown below: <br>
+            <br>
+            ExampleTry this code » <br>
+        <code>
+            var a = 'Hi there!';  // using single quotes <br>
+            var b = "Hi there!";  // using double quotes <br>
+        </code>
+            You can include quotes inside the string as long as they don't match the enclosing quotes. <br>
+            <br>
+            ExampleTry this code »<br>
+        <code>
+            var a = "Let's have a cup of coffee."; // single quote inside double quotes <br>
+            var b = 'He said "Hello" and left.';  // double quotes inside single quotes <br>
+            var c = 'We\'ll never give up.';     // escaping single quote with backslash <br>
+        </code>
+        </div>
+
+        <button class="btn5" onclick="Numbers()">Numbers <br> ->Click here to learn about Numbers</button>
+        <div id="num">The function is callable object that executes a block of code. Since functions are objects, so it is possible to          assign       them  to variables, as shown in the example below: <br>
+            <br>
+            ExampleTry this code »
+        <code>
+            <br>
+            var greeting = function(){  <br>
+            return "Hello World!"; <br>
+            } <br>
+            
+            // Check the type of greeting variable <br>
+            alert(typeof greeting) // Output: function <br>
+            alert(greeting());     // Output: Hello World! <br>
+        </code>
+            In fact, functions can be used at any place any other value can be used. Functions can be stored in variables, objects, and arrays. Functions can be passed as arguments to other functions, and functions can be returned from functions. Consider the following function: <br>
+            <br>
+            ExampleTry this code » <br>
+        <code>
+            function createGreeting(name){ <br>
+            return "Hello, " + name; <br>
+            } <br>
+            function displayGreeting(greetingFunction, userName){ <br>
+            return greetingFunction(userName); <br>
+            } <br>
+            var result = displayGreeting(createGreeting, "Peter"); <br>
+            alert(result); // Output: Hello, Peter <br>
+        </code>
+        </div><br>
+        <button class="btn6" onclick="nulltype()">null <br> ->Click here to learn about nulldatatype</button>
+        <div id="null">The Null Data Type <br>
+            This is another special data type that can have only one value-the null value. A null value means that there
+            is no value. It is not equivalent to an empty string ("") or 0, it is simply nothing. <br>
+
+            A variable can be explicitly emptied of its current contents by assigning it the null value. <br>
+            <br>
+            ExampleTry this code » <br>
+        <code>
+            var a = null; <br>
+            alert(a); // Output: null <br>
+            
+            var b = "Hello World!" <br>
+            alert(b); // Output: Hello World! <br>
+            
+            b = null; <br>
+            alert(b) // Output: null <br>
+        </code>
+        </div>
+
+        <button class="btn7" onclick="undefinedtype()">undefined <br> ->Click here to learn about undefinedtype</button>
+        <div id="undef">The Undefined Data Type <br>
+            The undefined data type can only have one value-the special value undefined. If a variable has been
+            declared, but has not been assigned a value, has the value undefined.
+            <br><br>
+            ExampleTry this code » <br>
+        <code>
+            var a; <br>
+            var b = "Hello World!" <br>
+            alert(a) // Output: undefined <br>
+            alert(b) // Output: Hello World! <br>
+        </code>
+        </div>
+    </div>
+    <script>
+        function objects() {
+            var x = document.getElementById("obj"); //
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+        }
+
+        function Arrays() {
+            var x = document.getElementById("arr");
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+        }
+        function Functions() {
+            var x = document.getElementById("fun");
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+        }
+        function Strings() {
+            var x = document.getElementById("str");
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+        }
+        function Numbers() {
+            var x = document.getElementById("num");
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+        }
+        function nulltype() {
+            var x = document.getElementById("null");
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+        }
+        function undefinedtype() {
+            var x = document.getElementById("undef");
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+        }
+    </script>
+</body>
+
+</html>

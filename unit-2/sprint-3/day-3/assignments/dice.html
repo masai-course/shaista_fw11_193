@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    /*Here display box properties are written */
+    #dice {
+        width: 200px;
+        height: 100px;
+        border: 3px solid black;
+        text-align:center;
+        padding-top:  40px;
+        font-size: 40px;
+
+    }
+    button{
+        margin-left: 40px;
+        width: 90px;
+        height: 40px;
+    }
+
+    </style>
+</head>
+<body>
+   <!-----Button is taken to change values -->
+    <button onclick="num()" >throw dice</button>
+    <!--After click on button in the below output changes-->
+    <div id="dice"> <p >#</p></div>
+    
+    <script>
+    function num(){
+        var x = Math.floor(Math.random() * (6-1)+1); 
+            if(x==1){ 
+                document.getElementById("dice").style.backgroundColor="green"; //
+            }
+            else if(x==2){
+                document.getElementById("dice").style.backgroundColor="blue";
+            }
+            else if(x==4){
+                document.getElementById("dice").style.backgroundColor="white";
+            }
+            else if(x==5){
+                document.getElementById("dice").style.backgroundColor="yellow";
+            }
+             else if(x==6){
+                document.getElementById("dic").style.backgroundColor="red";
+            }
+            else if(x==3){
+                document.getElementById("dice").style.backgroundColor="aqua";
+            }
+             document.getElementById("dice").innerHTML=x;
+    }
+    </script>
+</body>
+</html>
