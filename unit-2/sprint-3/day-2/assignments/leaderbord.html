@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Leaderbord</title>
+    <style>
+        #keyboard {
+            width: 200px;
+            height: 800px;
+            margin: auto;
+
+        }
+
+        #keyboard p {
+
+            font-weight: 60px;
+            font-size: 25px;
+            margin: 0px;
+
+        }
+
+        #val {
+            width: 168px;
+            height: 50px;
+            background-color: grey;
+        }
+
+        input {
+            width: 50px;
+            height: 50px;
+            font-size: 15px;
+            border: 2px solid black;
+            margin: 3px;
+        }
+
+        .btn {
+            background-color: orange;
+        }
+
+        .btn1 {
+            background-color: green;
+        }
+
+        .btn2 {
+            background-color: blueviolet;
+            margin-left: 56px;
+        }
+        button {
+            width: 166px;
+            height: 50px;
+            background-color: darkblue;
+            color: white;
+        }
+        #minele {
+            text-align: center;
+            background-color: brown;
+            width: 50px;
+            height: 50px;
+            margin: 0px;
+            color: aliceblue;
+            font-weight: 5px;
+        }
+        #maxele {
+            text-align: center;
+            background-color: darkgreen;
+            width: 50px;
+            height: 50px;
+            margin: 0px;
+            color: aliceblue;
+            
+        }
+        .fr{
+            float: right;
+        }
+        
+        #maxmin{
+            width: 60px;
+        }
+    </style>
+</head>
+
+</html>
+
+<body>
+    <div id="keyboard">
+        <div id="maxmin"  class="fr">
+            <button id="minele" value="123"> 123</button>
+            <p>MIN</p>
+            </div>
+            
+            <div>
+            <button id="maxele" value="123"> 123 </button>
+            <p>MAX</p>
+        </div>
+        <p>SCORE</p>
+        <input type="text" id="val" />
+        <br>
+        <input class="btn1" type="button" value="1" onclick="dis('1')" />
+        <input class="btn" type="button" value="2" onclick="dis('2')" />
+        <input class="btn1" type="button" value="3" onclick="dis('3')" />
+        <br>
+        <input class="btn" type="button" value="4" onclick="dis('4')" />
+        <input class="btn" type="button" value="5" onclick="dis('5')" />
+        <input class="btn" type="button" value="6" onclick="dis('6')" />
+        <br>
+        <input class="btn1" type="button" value="7" onclick="dis('7')" />
+        <input class="btn" type="button" value="8" onclick="dis('8')" />
+        <input class="btn1" type="button" value="9" onclick="dis('9')" />
+        <br>
+        <input class="btn2" type="button" value="0" onclick="dis('0')" />
+        <br>
+        <button onclick="enter()" >Enter</button>
+    </div>
+    <script>
+        min = 123;
+        max = 123;
+        function dis(val) {
+            document.getElementById("val").value += val;
+        }
+        function enter() {
+            var x = document.getElementById("val").value;
+            if (x > (max)) {
+                document.getElementById("maxele").textContent = x;
+
+            }
+            else {
+                document.getElementById("minele").textContent = x;
+            }
+        }
+    </script>
+</body>
