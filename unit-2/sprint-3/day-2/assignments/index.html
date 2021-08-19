@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    </style>
+</head>
+<body>
+
+    <form onsubmit="submitFrom(event)">
+        <input type="text" id="name" placeholder="moive name">
+        <input type="text" id="rating" placeholder="enter rating">
+        <input  type="submit">
+    </form>
+    <script>
+    
+    function submitFrom(e){
+        e.preventDefault();
+        const movie_object={
+            name: document.getElementById("name").value,
+            rating: document.getElementById("rating").value,
+        };
+        console.log('movie:',movie_object);
+       const moive_json = JSON.stringify(movie_object);
+       localStorage.setItem("myFavMovie",moive_json)
+    }
+    </script>
+</body>
+</html>

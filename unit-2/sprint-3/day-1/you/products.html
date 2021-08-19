@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add-caed</title>
+</head>
+    <style>
+        #data{
+            display: grid;
+            grid-template-columns: 20% 20% 20% 20%;
+            grid-gap: 5%;
+        }
+        #data div{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        img{
+            width: 50%;
+        }
+    </style>
+<body>
+    <h1>Products To Add to card</h1>
+    <div id="data"></div>
+</body>
+</html>
+<script>
+    const prod =[
+    {
+        name:"Watch",
+        price : "250",
+        image:"https://rukminim1.flixcart.com/image/880/1056/kbl4cy80/watch/r/m/o/skm-1155-blue-skmei-original-imafsvz4jx3zvqd9.jpeg?q=50",
+    },
+    {
+        name:"Shoes",
+        price : "250",
+        image:"https://media-cldnry.s-nbcnews.com/image/upload/t_fit-2000w,f_auto,q_auto:best/newscms/2020_17/3318911/200422-eco-shoes-2x1-al-1218.jpg",
+    },
+    {
+        name:"Phone",
+        price : "250",
+        image:"https://rukminim1.flixcart.com/image/612/612/k52s58w0/headphone/q/v/b/zebronics-zeb-symphony-original-imafnuefgmr5etzv.jpeg?q=70",
+    },{
+        name:"Headphones",
+        price : "250",
+        image:"https://rukminim1.flixcart.com/image/612/612/k0vbgy80pkrrdj/headphone/u/m/j/boat-bassheads-900-super-extra-bass-original-imafg96fxtvvbghf.jpeg?q=70",
+    },{
+        name:"Maggi",
+        price : "250",
+        image:"https://rukminim1.flixcart.com/image/280/280/k40798w0/noodle/k/a/y/840-masala-instant-noodles-maggi-original-imafny8hdrgrm7jd.jpeg?q=70",
+    },{
+        name:"Specs",
+        price : "250",
+        image:"https://rukminim1.flixcart.com/image/150/150/k070zgw0/sunglass/w/p/z/free-size-sg-45-eyevy-original-imafh5jbtv4np5gz.jpeg?q=70",
+    },{
+        name:"Cap",
+        price : "250",
+        image:"https://rukminim1.flixcart.com/image/150/150/kbjox3k0/cap/p/z/u/free-vroc-nb-vrojass-original-imafsuqywhkzhfcs.jpeg?q=70",
+    },{
+        name:"Sofa",
+        price : "250",
+        image:"https://rukminim1.flixcart.com/image/150/150/jfk00i80/inflatable-sofa/d/g/q/pvc-leatherette-2-seater-inflatable-sofa-color-black-wds-original-imaf3j6fzyhywqrq.jpeg?q=70",
+    },
+    ];
+
+    const product_json = JSON.stringify(prod);
+
+    localStorage.setItem("Myproducts", product_json);
+
+    let Myproducts = localStorage.getItem("Myproducts");
+
+    Myproducts = JSON.parse(Myproducts);
+var data_div = document.getElementById("data");
+var arr=[];
+var i=0;
+    function showProduct(){
+        
+
+        Myproducts.forEach( function(products){
+                    let div = document.createElement("div");
+                    
+                    let names = document.createElement("h3");
+                    names.innerText = products.name;
+
+                    let prices = document.createElement("p");
+                    prices.innerText = products.price;
+
+                    let images = document.createElement("img");
+                    images.src = products.image;
+
+                    let button = document.createElement("button");
+                    button.innerText ="Add to Card";
+                    button.onclick = function(){
+                        if(arr.includes(products.name)){
+                            alert("already added");
+                        }else{
+                            arr.push(products.name);
+                        }
+                    }
+             
+                     const arr_json = JSON.stringify(arr);
+
+                    localStorage.setItem("Cardelements", arr_json);
+                    
+                    let Cardelements = localStorage.getItem("Cardelements");
+
+                     Cardelements = JSON.parse(Cardelements);
+                    div.append(images,names,prices,button);
+                    data_div.append(div);
+                    i++;
+        });
+    }
+           console.log(arr);
+    showProduct();
+  
+    
+
+</script>

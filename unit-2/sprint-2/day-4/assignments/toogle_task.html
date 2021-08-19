@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo_Toggle_Status</title>
+    <style type="text/css">
+        #cnt {
+            float: right;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <input id="name" type="text" placeholder = "Add Item to ToDo"/>
+        <input type="text" value = "false" id="txt"/>
+        <input type="submit" value="Submit" />
+        <input type="number" value = "count" id="cnt"/>
+</form>
+    <hr/>
+    <table border="1">
+        <tr>
+            <td>Task Name</td>
+            <td>Done</td>
+            <td>Remove</td>
+        </tr>
+    </table>
+    <script type="text/javascript">
+        var cntvalue = document.getElementById('cnt');
+        var toggleval = document.getElementById('txt');
+        var form = document.querySelector('form');
+        var count = 0;
+        var addData = function (event) {
+            event.preventDefault();
+            var name = document.getElementById("name").value;
+            createItem(name);
+            cntvalue.value = count;
+        }
+        var complete = function (event) {
+            var parent = event.target.parentNode;
+            parent.style.background = "green";
+            parent.style.textDecoration = "line-through";
+        }
+        var deleted = function (event) {
+            var parent = event.target.parentNode;
+            parent.remove();
+            cnt.value = --count;
+        }
+        function createItem(name, quantity, priority) {
+            var parent = document.querySelector('table');
+            var row = document.createElement('tr');
+            var c1 = document.createElement('td');
+            c1.textContent = name;
+            var c4 = document.createElement('td');
+            c4.textContent = "Done";
+            c4.addEventListener('click', complete);
+            var c5 = document.createElement('td');
+            c5.textContent = "Remove";
+            c5.addEventListener('click', deleted)
+            row.appendChild(c1);
+            row.appendChild(c4);
+            row.appendChild(c5);
+            parent.appendChild(row);
+            count++;
+        }
+        function toggleData() {
+            if (toggleval.value === "false") {
+                toggleval.value = 'true';
+            }
+            else {
+                toggleval.value = 'false';
+            }
+        }
+        form.addEventListener('submit', addData);
+        form.addEventListener('submit', toggleData);
+    </script>
+</body>
+</html>

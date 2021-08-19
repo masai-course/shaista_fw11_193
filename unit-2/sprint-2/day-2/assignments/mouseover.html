@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            height:600px;
+            width:600px;
+            background-color: rgb(24, 224, 224);
+            margin: auto;
+            border-radius: 5px;
+
+        }
+        div>button{
+            width:100px;
+            height: 50px;
+            background-color: brown;
+            text-align: center;
+            position: fixed;
+            bottom: 200px;
+            right: 600px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div onmouseover="function1()" onmouseleave="function2()" >
+        <button id="changeColor">SUBMIT</button>
+    </div>
+    <script>
+        function function1(){
+            document.getElementById('changeColor').style.backgroundColor = "green";
+        }
+        document.getElementById('changeColor').addEventListener("1",function1)
+        function function2(){
+            document.getElementById('changeColor').style.backgroundColor = "brown";
+        }
+        document.getElementById("changeColor").removeEventListener("2", function2);
+    </script>
+</body>
+</html>

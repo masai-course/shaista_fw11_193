@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+        <script>
+            function array1(x){
+                for(var i=0;i<arguments.length;i++){
+                this[i] = arguments[i]
+                }
+            }
+            var arr = new array1(1,2,3,4,5);
+            console.log(arr);
+        </script>
+    </body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task</title>
+</head>
+<body>
+    <!-- Here Creation of input Tags -->
+    <input type="text" placeholder="Add Tasks" id="name" />
+    <!--Here Submit button is created with help of input tag -->
+    <input type="button" value="SUBMIT" id="btn1" />
+    <script type="text/javascript">
+        // Here  we are accessing input tag in the html with the help of task
+        var task = document.getElementById("name");
+        // Here we are accessing button tag with the help of id
+        var btn = document.getElementById("btn1");
+        // Creation of the task function with the help of constructors
+        function Task(name) {
+            this.name = name;
+            this.creationdate = Date();
+            this.status = "false";
+        }
+        // Here the creation of display function.
+        function display() {
+            // Here we are creating unordered list with the 
+            var ulist = document.createElement('ul');
+            // Here we are returning the object value with help of new keyword
+            var obj = new Task(task.value);
+            // Here creating the list with help of display
+            var list = document.createElement('li');
+            // Here we are adding the obj task name to list.
+            var textnode = document.createTextNode(obj.name);
+            list.appendChild(textnode);
+            // Here we are appending the content to unordered list.
+            //list.innerHTML = obj.name;
+            ulist.append(list)
+            // Here we are appending the content to website body.
+            document.body.appendChild(ulist);
+        }
+        // Here adding the event listenter submit button
+        btn.addEventListener('click', display);
+
+
+    </script>
+</body>
+
+</html>

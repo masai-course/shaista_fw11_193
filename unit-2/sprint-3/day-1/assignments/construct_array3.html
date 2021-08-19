@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+        <script>
+            function array1(x){
+                this.length=arguments.length;
+                 for(var i=0;i<arguments.length;i++){
+                this[i] = arguments[i]
+                }
+            }
+           
+            array1.prototype.put = function(ele){
+                let index = this.length;
+                 this.length++;
+                this[index]=ele;
+                }
+              array1.prototype.rev = function(x){  
+                  var j=0;
+                  for(var i=arguments.length-1;i>=0;i--){
+                    this[j] = arguments[i];
+                j++;
+                } 
+              }
+              array1.prototype.fst = function(x){
+                  var i=0;
+                this[i] = arguments[i];
+            
+            }
+             var arr = new array1(1,2,3,4,5);
+            arr.put(6);
+            console.log(arr);
+            arr.rev(1,2,3,4,5,6);
+            console.log(Object.values(arr));
+            var arr2 = new array1()
+            arr2.fst(1,2,3,4,5);
+            console.log(Object.values(arr2));
+            
+        </script>
+    </body>
+</html>

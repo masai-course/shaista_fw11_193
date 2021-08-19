@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+        <script>
+            function family(){
+                this.grandfather = "raja";
+                this.grandmother = "rani";
+                this.father = "ram";
+                this.mother= "ragha";
+            }
+            var son = new family();
+             console.log(son);
+               const family2={
+                grandfather: "raja",
+                grandmother : "rani",
+                father : "ram",
+                mother :"ragha",
+            }
+            const son2 =  Object.create(family2)
+            console.log(son2);
+        </script>
+    </body>
+</html>

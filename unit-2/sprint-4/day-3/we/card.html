@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         #data {
+        display: grid;
+        grid-template-columns: 20% 20% 20% 20%;
+        grid-gap: 5%;
+    }
+
+    img {
+        width: 40%;
+    }
+
+    #data div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    </style>
+</head>
+<body>
+    <h1>Card Page</h1>
+        <h1 id="total"></h1>
+          <button onclick=" makepayment()">Make payment</button>
+    <div id="data"></div>
+
+    
+</body>
+</html>
+<script>
+
+let card_data = JSON.parse(localStorage.getItem("card"));
+console.log("card_data:",card_data);
+
+        let data_div = document.getElementById("data");
+        var total=0;
+        card_data.forEach(function (product) {
+            let div = document.createElement("div");
+
+            let p_name = document.createElement("p");
+
+            p_name.innerText = product.name;
+
+            let p_price = document.createElement("p");
+
+            p_price.innerText = product.price;
+
+            let image = document.createElement("img");
+
+            image.src = product.image;
+
+
+            div.append(image, p_name, p_price);
+
+            data_div.append(div);
+            total= total+ Number(product.price);
+        });
+    
+    let total_h1 = document.getElementById("total");
+
+    total_h1.innerText = `Total Price- ${total}`
+
+    function makepayment(){
+        setTimeout(function(){
+            alert("Payment Successful");},4000);
+        }
+        
+    
+
+
+</script>

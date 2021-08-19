@@ -4,13 +4,24 @@
     </head>
     <body>
         <script>
-            function  creat_copy(n,m){
-                var person={};
-                person.name=n;
-                person.id=m;
+            function  creat_copy(){
+                //object literal
+                original = {
+                     fruit : "Apple" 
+                     };
+                let real_copy = {};
+                Object.assign(real_copy, original);// assiging values of original to real copy
+                copy1 = real_copy; // copying values from original copy
+                copy1["fruit"] = "Banana"; // we're not assiging a new value to the variable, we're only MODIFYING it, so it changes the copy and the original!!!!
+                console.log(original);//output will be same of original funcation
+                console.log(copy);
+              
             }
-            
-            console.log(creat_copy(name="john",id=9));
+         
+          
+            creat_copy( );
+          
+    
         </script>
     </body>
 </html>

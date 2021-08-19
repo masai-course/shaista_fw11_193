@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Product form</title>
+</head>
+<body>
+	<form onsubmit="products(event)">
+		<input type="text" name="" id="name" placeholder="Enter name of product">
+		<input type="Number" id="price" placeholder="Enter prize of product">
+		<input type="scr" id="image" placeholder="Enter image link">
+		<input type="submit">
+	</form>
+</body>
+</html>
+<script>
+var arr =[];
+	function products(e){
+		e.preventDefault();
+		const product_obj={
+			name : document.getElementById("name").value,
+			price : document.getElementById("price").value,
+			image : document.getElementById("image").value,
+		};
+		//console.log('products:',Object.values(product_obj));
+		arr.push(product_obj);
+		const product_json = JSON.stringify(arr);
+		localStorage.setItem("Myprd",product_json)
+	}
+</script>
