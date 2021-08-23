@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APP</title>
+</head>
+<body>
+    <div id="products"><h1>Welcome to Jwellerys</h1></div>
+</body>
+</html>
+<script>
+
+        const products =[{
+            name:"zinc gold plate",
+            cost:  488 ,
+            image:"https://rukminim1.flixcart.com/image/580/696/jewellery-set/y/v/e/263cb1960-d1-sukkhi-original-imae9r324hvv353f.jpeg?q=50" ,
+            brand:"raj brand",
+        },{
+            name:"alloy plated ",
+            cost:  3566 ,
+            image:"https://rukminim1.flixcart.com/image/580/696/kdyus280/jewellery-set/6/a/r/skr67387-sukkhi-original-imafuqhpj9hmgnwr.jpeg?q=50" ,
+            brand:"raj brand",
+        },{
+            name:"Gold plated ",
+            cost:  2000 ,
+            image:"https://rukminim1.flixcart.com/image/580/696/kjem3rk0-0/jewellery-set/a/b/q/skr70050-sukkhi-original-imafyzfsjqgmubz4.jpeg?q=50" ,
+            brand:"raj brand",
+        },{
+            name:"zinc gold plate",
+            cost:  488 ,
+            image:"https://rukminim1.flixcart.com/image/580/696/jewellery-set/y/v/e/263cb1960-d1-sukkhi-original-imae9r324hvv353f.jpeg?q=50" ,
+            brand:"raj brand",
+        },{
+            name:"alloy plated ",
+            cost:  3566 ,
+            image:"https://rukminim1.flixcart.com/image/580/696/kdyus280/jewellery-set/6/a/r/skr67387-sukkhi-original-imafuqhpj9hmgnwr.jpeg?q=50" ,
+            brand:"manipur",
+        },{
+            name:"Gold plated ",
+            cost:  2000 ,
+            image:"https://rukminim1.flixcart.com/image/580/696/kjem3rk0-0/jewellery-set/a/b/q/skr70050-sukkhi-original-imafyzfsjqgmubz4.jpeg?q=50" ,
+            brand:"manipur",
+        },{
+            name:"zinc gold plate",
+            cost:  488 ,
+            image:"https://rukminim1.flixcart.com/image/580/696/jewellery-set/y/v/e/263cb1960-d1-sukkhi-original-imae9r324hvv353f.jpeg?q=50" ,
+            brand:"malbar",
+        },{
+            name:"alloy plated ",
+            cost:  3566 ,
+            image:"https://rukminim1.flixcart.com/image/580/696/kdyus280/jewellery-set/6/a/r/skr67387-sukkhi-original-imafuqhpj9hmgnwr.jpeg?q=50" ,
+            brand:"malbar",
+        },{
+            name:"Gold plated ",
+            cost:  2000 ,
+            image:"https://rukminim1.flixcart.com/image/580/696/kjem3rk0-0/jewellery-set/a/b/q/skr70050-sukkhi-original-imafyzfsjqgmubz4.jpeg?q=50" ,
+            brand:"malbar",
+        }{
+            name:"zinc gold plate",
+            cost:  488 ,
+            image:"https://rukminim1.flixcart.com/image/580/696/jewellery-set/y/v/e/263cb1960-d1-sukkhi-original-imae9r324hvv353f.jpeg?q=50" ,
+            brand:"sukhi brand",
+        },{
+            name:"alloy plated ",
+            cost:  3566 ,
+            image:"https://rukminim1.flixcart.com/image/580/696/kdyus280/jewellery-set/6/a/r/skr67387-sukkhi-original-imafuqhpj9hmgnwr.jpeg?q=50" ,
+            brand:"sukhi brand",
+        },{
+            name:"Gold plated ",
+            cost:  2000 ,
+            image:"https://rukminim1.flixcart.com/image/580/696/kjem3rk0-0/jewellery-set/a/b/q/skr70050-sukkhi-original-imafyzfsjqgmubz4.jpeg?q=50" ,
+            brand:"sukhi brand",
+        }
+
+        ]
+
+        const products_json =JSON.stringify(proudcts);
+
+        localStorage.setItem("MyjProducts",products_json);
+
+        let MyjProducts = localStorage.getItem("MyjProducts");
+
+        MyjProducts = JSON.parse("Myjproducts");
+
+        function viewProducts(){
+            
+            let data = document.getElementById("products");
+
+            MyjProducts.forEach(function (product){
+                let div = document.createElement("div");
+                let name = document.createElement("p");
+                name.
+
+
+            })
+
+        }
+</script>
