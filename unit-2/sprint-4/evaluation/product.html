@@ -1,165 +1,189 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>APP</title>
     <style>
-        #products{
+        #products {
             display: grid;
             grid-template-columns: 30% 30% 30%;
-            grid-gap:5%;
+            grid-gap: 5%;
         }
-        img{
-            width:50%
+
+        img {
+            width: 50%
         }
-        #products div{
+
+        #products div {
             display: flex;
             flex-direction: column;
             align-items: center;
         }
-        h1{
+
+        h1 {
             text-align: center;
         }
-        #btn{
-            margin: 200px 600px;
+
+        #btn {
+            margin: 400px 600px;
             align-items: center;
         }
     </style>
 </head>
+
 <body>
- <button id="btn"><a href="card.html">Visit your products</a></button>
-<h1>Welcome to Jwellerys</h1>
+    <h1>Welcome to Jwellerys</h1>
+
+    <label for="brands">Choose a brand</label>
+    <select name="brand" id="brands">
+    <option value="raj">raj brand</option>
+    <option value="malbar">Malbar</option>
+    <option value="manipur">Manipur</option>
+    <option value="Sukhi">Sukhi</option>
+    </select>
+    <br>
+    <br>
+    <label for="brands">Sort by price</label>
+    <select name="brand" id="brands">
+    <option value="raj">low</option>
+    <option value="malbar">High</option>
+    </select>
+    <br>
+    <br>
+    <br>
     <div id="products"></div>
-   
+    <button id="btn"><a href="card.html">Visit your products</a></button>
 </body>
+
 </html>
 <script>
 
-        const products =[{
-            name:"zinc gold plate",
-            cost:  488 ,
-            image:"https://rukminim1.flixcart.com/image/580/696/jewellery-set/y/v/e/263cb1960-d1-sukkhi-original-imae9r324hvv353f.jpeg?q=50" ,
-            brand:"raj brand",
-        },{
-            name:"alloy plated ",
-            cost:  3566 ,
-            image:"https://rukminim1.flixcart.com/image/580/696/kdyus280/jewellery-set/6/a/r/skr67387-sukkhi-original-imafuqhpj9hmgnwr.jpeg?q=50" ,
-            brand:"raj brand",
-        },{
-            name:"Gold plated ",
-            cost:  2000 ,
-            image:"https://rukminim1.flixcart.com/image/580/696/kjem3rk0-0/jewellery-set/a/b/q/skr70050-sukkhi-original-imafyzfsjqgmubz4.jpeg?q=50" ,
-            brand:"raj brand",
-        },{
-            name:"zinc plate",
-            cost:  488 ,
-            image:"https://rukminim1.flixcart.com/image/580/696/jewellery-set/y/v/e/263cb1960-d1-sukkhi-original-imae9r324hvv353f.jpeg?q=50" ,
-            brand:"raj brand",
-        },{
-            name:"plated ",
-            cost:  3566 ,
-            image:"https://rukminim1.flixcart.com/image/580/696/kdyus280/jewellery-set/6/a/r/skr67387-sukkhi-original-imafuqhpj9hmgnwr.jpeg?q=50" ,
-            brand:"manipur",
-        },{
-            name:"Gold ",
-            cost:  2000 ,
-            image:"https://rukminim1.flixcart.com/image/580/696/kjem3rk0-0/jewellery-set/a/b/q/skr70050-sukkhi-original-imafyzfsjqgmubz4.jpeg?q=50" ,
-            brand:"manipur",
-        },{
-            name:"zinc ",
-            cost:  488 ,
-            image:"https://rukminim1.flixcart.com/image/580/696/jewellery-set/y/v/e/263cb1960-d1-sukkhi-original-imae9r324hvv353f.jpeg?q=50" ,
-            brand:"malbar",
-        },{
-            name:"alloy  ",
-            cost:  3566 ,
-            image:"https://rukminim1.flixcart.com/image/580/696/kdyus280/jewellery-set/6/a/r/skr67387-sukkhi-original-imafuqhpj9hmgnwr.jpeg?q=50" ,
-            brand:"malbar",
-        },{
-            name:"daimobd ",
-            cost:  2000 ,
-            image:"https://rukminim1.flixcart.com/image/580/696/kjem3rk0-0/jewellery-set/a/b/q/skr70050-sukkhi-original-imafyzfsjqgmubz4.jpeg?q=50" ,
-            brand:"malbar",
-        },{
-            name:"silver",
-            cost:  488 ,
-            image:"https://rukminim1.flixcart.com/image/580/696/jewellery-set/y/v/e/263cb1960-d1-sukkhi-original-imae9r324hvv353f.jpeg?q=50" ,
-            brand:"sukhi brand",
-        },{
-            name:"silver plate ",
-            cost:  3566 ,
-            image:"https://rukminim1.flixcart.com/image/580/696/kdyus280/jewellery-set/6/a/r/skr67387-sukkhi-original-imafuqhpj9hmgnwr.jpeg?q=50" ,
-            brand:"sukhi brand",
-        },{
-            name:"diamond plated ",
-            cost:  2000 ,
-            image:"https://rukminim1.flixcart.com/image/580/696/kjem3rk0-0/jewellery-set/a/b/q/skr70050-sukkhi-original-imafyzfsjqgmubz4.jpeg?q=50" ,
-            brand:"sukhi brand",
-        }
-
-        ]
-//console.log(products)
-        const products_json =JSON.stringify(products);
-
-        localStorage.setItem("MyjProducts",products_json);
-
-        let MyjProducts = localStorage.getItem("MyjProducts");
-
-        MyjProducts = JSON.parse(MyjProducts);
-
-        function viewProducts(){
-
-            let data = document.getElementById("products");
-
-            MyjProducts.forEach(function (product){
-                let div = document.createElement("div");
-                let name = document.createElement("p");
-                name.innerText= product.name;
-                let cost = document.createElement("p");
-                cost.innerText= product.cost;
-                 let image = document.createElement("img");
-                image.src= product.image;
-                let brand = document.createElement("p");
-                brand.innerText= product.brand;
-                
-
-                let btn = document.createElement("button");
-                btn.innerText = "Add to card"
-
-                btn.onclick = function(){
-                    addtoCard(product);
-                }
-console.log(products)
-                div.append(image,name,cost,brand,btn);
-                data.append(div);
-            });
-        }
-        viewProducts();
-
-if(localStorage.getItem("card")===null){
-    localStorage.setItem("card",JSON.stringify([]));
-}
-var temp=[];
-function addtoCard(p){
-    let card_data = JSON.parse(localStorage.getItem("card"));
-    console.log(card_data)
-    for(key in card_data){
-        temp.push(card_data[key].name); 
+    const products = [{
+        name: "zinc gold plate",
+        cost: 488,
+        image: "https://rukminim1.flixcart.com/image/580/696/jewellery-set/y/v/e/263cb1960-d1-sukkhi-original-imae9r324hvv353f.jpeg?q=50",
+        brand: "raj brand",
+    }, {
+        name: "alloy plated ",
+        cost: 3566,
+        image: "https://rukminim1.flixcart.com/image/580/696/kdyus280/jewellery-set/6/a/r/skr67387-sukkhi-original-imafuqhpj9hmgnwr.jpeg?q=50",
+        brand: "raj brand",
+    }, {
+        name: "Gold plated ",
+        cost: 2000,
+        image: "https://rukminim1.flixcart.com/image/580/696/kjem3rk0-0/jewellery-set/a/b/q/skr70050-sukkhi-original-imafyzfsjqgmubz4.jpeg?q=50",
+        brand: "raj brand",
+    }, {
+        name: "zinc plate",
+        cost: 488,
+        image: "https://rukminim1.flixcart.com/image/580/696/jewellery-set/y/v/e/263cb1960-d1-sukkhi-original-imae9r324hvv353f.jpeg?q=50",
+        brand: "raj brand",
+    }, {
+        name: "plated ",
+        cost: 3566,
+        image: "https://rukminim1.flixcart.com/image/580/696/kdyus280/jewellery-set/6/a/r/skr67387-sukkhi-original-imafuqhpj9hmgnwr.jpeg?q=50",
+        brand: "manipur",
+    }, {
+        name: "Gold ",
+        cost: 2000,
+        image: "https://rukminim1.flixcart.com/image/580/696/kjem3rk0-0/jewellery-set/a/b/q/skr70050-sukkhi-original-imafyzfsjqgmubz4.jpeg?q=50",
+        brand: "manipur",
+    }, {
+        name: "zinc ",
+        cost: 488,
+        image: "https://rukminim1.flixcart.com/image/580/696/jewellery-set/y/v/e/263cb1960-d1-sukkhi-original-imae9r324hvv353f.jpeg?q=50",
+        brand: "malbar",
+    }, {
+        name: "alloy  ",
+        cost: 3566,
+        image: "https://rukminim1.flixcart.com/image/580/696/kdyus280/jewellery-set/6/a/r/skr67387-sukkhi-original-imafuqhpj9hmgnwr.jpeg?q=50",
+        brand: "malbar",
+    }, {
+        name: "daimobd ",
+        cost: 2000,
+        image: "https://rukminim1.flixcart.com/image/580/696/kjem3rk0-0/jewellery-set/a/b/q/skr70050-sukkhi-original-imafyzfsjqgmubz4.jpeg?q=50",
+        brand: "malbar",
+    }, {
+        name: "silver",
+        cost: 488,
+        image: "https://rukminim1.flixcart.com/image/580/696/jewellery-set/y/v/e/263cb1960-d1-sukkhi-original-imae9r324hvv353f.jpeg?q=50",
+        brand: "sukhi brand",
+    }, {
+        name: "silver plate ",
+        cost: 3566,
+        image: "https://rukminim1.flixcart.com/image/580/696/kdyus280/jewellery-set/6/a/r/skr67387-sukkhi-original-imafuqhpj9hmgnwr.jpeg?q=50",
+        brand: "sukhi brand",
+    }, {
+        name: "diamond plated ",
+        cost: 2000,
+        image: "https://rukminim1.flixcart.com/image/580/696/kjem3rk0-0/jewellery-set/a/b/q/skr70050-sukkhi-original-imafyzfsjqgmubz4.jpeg?q=50",
+        brand: "sukhi brand",
     }
-        if(temp.indexOf(p.name) != -1)   {
+
+    ]
+    //console.log(products)
+    const products_json = JSON.stringify(products);
+
+    localStorage.setItem("MyjProducts", products_json);
+
+    let MyjProducts = localStorage.getItem("MyjProducts");
+
+    MyjProducts = JSON.parse(MyjProducts);
+
+    function viewProducts() {
+
+        let data = document.getElementById("products");
+
+        MyjProducts.forEach(function (product) {
+            let div = document.createElement("div");
+            let name = document.createElement("p");
+            name.innerText = product.name;
+            let cost = document.createElement("p");
+            cost.innerText = product.cost;
+            let image = document.createElement("img");
+            image.src = product.image;
+            let brand = document.createElement("p");
+            brand.innerText = product.brand;
+
+
+            let btn = document.createElement("button");
+            btn.innerText = "Add to card"
+
+            btn.onclick = function () {
+                addtoCard(product);
+            }
+            console.log(products)
+            div.append(image, name, cost, brand, btn);
+            data.append(div);
+        });
+    }
+    viewProducts();
+
+    if (localStorage.getItem("card") === null) {
+        localStorage.setItem("card", JSON.stringify([]));
+    }
+    var temp = [];
+    function addtoCard(p) {
+        let card_data = JSON.parse(localStorage.getItem("card"));
+        console.log(card_data)
+        for (key in card_data) {
+            temp.push(card_data[key].name);
+        }
+        if (temp.indexOf(p.name) != -1) {
             alert("Already product added to card");
-        }else{
+        } else {
             card_data.push(p);
         }
-        localStorage.setItem("card",JSON.stringify(card_data));
+        localStorage.setItem("card", JSON.stringify(card_data));
 
-}
-
-
+    }
 
 
 
-         
+
+
+
 </script>
