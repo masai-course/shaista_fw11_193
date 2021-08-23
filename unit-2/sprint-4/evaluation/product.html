@@ -6,10 +6,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>APP</title>
     <style>
+        #products{
+            display: grid;
+            grid-template-columns: 30% 30% 30%;
+            grid-gap:5%;
+        }
+        img{
+            width:50%
+        }
+        #products div{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        h1{
+            text-align: center;
+        }
+        #btn{
+            margin: 200px 800px;
+            align-items: center;
+        }
     </style>
 </head>
 <body>
-    <div id="products"><h1>Welcome to Jwellerys</h1></div>
+ <button id="btn"><a href="card.html">Visit your products</a></button>
+<h1>Welcome to Jwellerys</h1>
+    <div id="products"></div>
+   
 </body>
 </html>
 <script>
@@ -115,6 +138,23 @@ console.log(products)
         }
         viewProducts();
 
+if(localStorage.getItem("card")===null){
+    localStorage.setItem("card",JSON.stringify([]));
+}
+var temp=[];
+function addtoCard(p){
+    let card_data = JSON.parse(localStorage.getItem("card"));
+    for(key in card_data){
+        temp.push(card_data[key].name); 
+    }
+        if(temp.indexOf(p.name) != -1)   {
+            alert("Already product added to card");
+        }else{
+            card_data.push(p);
+        }
+        localStorage.setItem("card",JSON.stringify(card_data));
+
+}
 
 
 
