@@ -23,7 +23,7 @@
             text-align: center;
         }
         #btn{
-            margin: 200px 800px;
+            margin: 200px 600px;
             align-items: center;
         }
     </style>
@@ -100,7 +100,7 @@
         }
 
         ]
-console.log(products)
+//console.log(products)
         const products_json =JSON.stringify(products);
 
         localStorage.setItem("MyjProducts",products_json);
@@ -144,6 +144,7 @@ if(localStorage.getItem("card")===null){
 var temp=[];
 function addtoCard(p){
     let card_data = JSON.parse(localStorage.getItem("card"));
+    console.log(card_data)
     for(key in card_data){
         temp.push(card_data[key].name); 
     }
