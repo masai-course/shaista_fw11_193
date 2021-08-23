@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+
+            background: url("https://loverays.com/movies/Welcome_Bollywood_Movie_2007.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        nav {
+            background-color: rgb(8, 8, 129);
+
+        }
+
+        nav a {
+            float: right;
+            display: block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px;
+            text-decoration: none;
+            font-size: 20px;
+        }
+
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+
+        .sticky {
+            position: fixed;
+            top: 0;
+            width: 100%;
+        }
+
+        #data {
+            background-color: #1a0f4e;
+            width: 400px;
+            height: 400px;
+            margin: auto;
+            padding: auto;
+            border-radius: 5px;
+            margin-top: 150px;
+            font-size: 20px;
+            opacity: 200px;
+            color: #ddd;
+        }
+
+        h2 {
+            text-align: center;
+            padding: 20px;
+            margin-top: 20px;
+            margin-bottom: 0px;
+        }
+
+        #detail {
+            margin: 20px;
+            padding: 10px;
+        }
+
+        #detail input {
+            padding: auto;
+            margin: 10px;
+            width: 200px;
+            height: 20px;
+
+        }
+
+        #check {
+            margin: 20px;
+        }
+
+        #in {
+            margin-left: 150px;
+            margin-right: 150px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="sticky content">
+
+        <a href="singup.html">Singup</a>
+        <a href="login.html">Login</a>
+        <a href="home.html">Home</a>
+    </nav>
+    <form onsubmit="form(event)" id="data">
+        <h2>Enetr Login details</h2>
+        <br>
+
+        <div id="detail">
+            <label> User email</label>
+            <input type="email" name="" id="email" placeholder="Enter user name">
+            <br>
+            <label>Password</label>
+            <input type="password" id="pass" placeholder="enter password">
+            <br>
+        </div>
+
+        <div id="check">
+            <input type="checkbox" id="remeber">
+            <label>Remember me</label>
+
+        </div>
+        <br>
+        <div id="in">
+            <input type="submit">
+        </div>
+        <div id="signedup"></div>
+    </form>
+</body>
+
+</html>
+<script>
+    var emailkey = [];
+    var passkey = [];
+    function form(e) {
+        e.preventDefault();
+
+
+        var login = {
+            useremail: document.getElementById("email").value,
+            userPassword: document.getElementById("pass").value,
+        }
+
+        var checker = JSON.parse(localStorage.getItem("userData"));
+
+
+        for (key in checker) {
+            emailkey.push(checker[key].useremail)
+        }
+
+        console.log(emailkey)
+        for (key in checker) {
+            passkey.push(checker[key].userPassword)
+        }
+        console.log(passkey)
+
+
+        if (login.useremail == "") {
+            alert("Please enter valid email")
+
+        } else if (login.userPassword == "") {
+
+            alert("Please enter a valid password!")
+
+
+        } else if (emailkey.indexOf(login.useremail) != -1) {
+            if (passkey.indexOf(login.userPassword) != -1) {
+
+                document.getElementById("signedup").innerText = "Congratulations! Account created"
+                document.getElementById("signedup").style.color = "green"
+                setTimeout(  function() {
+                    window.location.href = "home.html"
+                }, 3000);
+              
+            } else {
+                document.getElementById("signedup").innerText = "Invalid creditials"
+                document.getElementById("signedup").style.color = "red"
+                
+            
+            }
+
+        }
+    }
+
+</script>

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: rgb(5, 5, 36);
+        }
+
+        nav {
+            background-color: blue;
+
+        }
+
+        nav a {
+            float: right;
+            display: block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px;
+            text-decoration: none;
+            font-size: 20px;
+        }
+
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+
+        .sticky {
+            position: fixed;
+            top: 0;
+            width: 100%;
+        }
+
+        #data {
+            background-color: #f2f2f2;
+            width: 400px;
+            height: 500px;
+            margin: auto;
+            padding: auto;
+            border-radius: 5px;
+            margin-top: 150px;
+            font-size: 25px;
+            opacity: 200px;
+        }
+
+        h2 {
+            text-align: center;
+            padding: 30px;
+            margin-bottom: 0px;
+
+        }
+
+        #detail {
+            margin-top: 0px;
+            margin-left: 20px;
+            margin-right: 20px;
+            padding: 10px;
+
+        }
+
+        #detail input {
+            padding: auto;
+            margin: 10px;
+            width: 180px;
+            height: 20px;
+
+        }
+
+        #check input {
+            margin-left: 20px;
+            width: 20px;
+            height: 20px;
+
+        }
+
+        .in {
+            margin-left: 150px;
+            margin-right: 150px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="sticky content">
+
+        <a href="singup.html">Singup</a>
+        <a href="login.html">Login</a>
+        <a href="home.html">Home</a>
+    </nav>
+    <form onsubmit="data(event)" id="data">
+        <h2>Enetr Singup details</h2>
+        <br>
+
+        <div id="detail">
+            <label for="name"> User name</label>
+            <input type="text" name="" id="name" placeholder="Firstname & Secondname" >
+            <label>Contact.no</label>
+            <input type="contact.no" id="number" placeholder="contact.no">
+            <label>Email</label>
+            <input type="email" id="email" placeholder="email@">
+            <label>Password</label>
+            <input type="password" id="pass" placeholder="enter password">
+            <br>
+        </div>
+
+        <div id="check">
+            <input type="checkbox" id="remeber">
+            <label>Remember me</label>
+
+        </div>
+        <br>
+        <div id="continue" class="in">
+            <input type="submit">
+        </div>
+        <div id="signedup"></div>
+</body>
+
+</html>
+<script>
+    var userData = [];
+    function data(e) {
+        e.preventDefault();
+        let inputs = {
+
+            userName: document.getElementById("name").value,
+            userphone: document.getElementById("number").value,
+            useremail: document.getElementById("email").value,
+            userPassword: document.getElementById("pass").value,
+        }
+
+        if (getData(inputs, userData)) {
+            userData.push(inputs);
+            console.log(userData)
+            document.getElementById("signedup").innerText = "Congratulations! Account created"
+            document.getElementById("signedup").style.color = "green"
+            
+
+            const input_json = JSON.stringify(userData);
+            localStorage.setItem("userData", input_json);
+            setTimeout( 
+            function(){
+                            window.location.href = "login.html"
+                            },3000);
+
+
+        }
+    }
+    let continues = document.getElementById("continue")
+
+    continues.addEventListener("click", data);
+
+    var emailkey = [];
+
+    function getData(inputs, userData) {
+
+        let checker = localStorage.getItem("userData");
+
+
+        checker = JSON.parse(checker)
+        for (key in checker) {
+            emailkey.push(checker[key].userName)
+        }
+        var validEmail = inputs.useremail.trim()
+        var validPassword = inputs.userPassword.trim()
+        var validName = inputs.userName.trim()
+        var validNumber = inputs.userphone.trim()
+        if (validEmail == "") {
+            alert("Please enter your email")
+            return false;
+        } else if (validPassword == "") {
+
+            alert("Please enter a valid password!")
+            return false;
+
+        } else if (validName == "") {
+
+            alert("Please enter a valid Name!")
+            return false;
+
+        } else if (validNumber == "") {
+
+            alert("Please enter a valid Number!")
+            return false;
+
+        } else if (emailkey.indexOf(inputs.userName) != -1) {
+            document.getElementById("signedup").innerText = "user-id already exists!!"
+            document.getElementById("signedup").style.color = "red"
+            return false;
+        } else {
+            return true;
+        }
+    }
+</script>

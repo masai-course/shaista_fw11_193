@@ -9,28 +9,46 @@
 </head>
 
 <style>
+body{
+    background-color: rgb(3, 3, 56);
+    color: aliceblue;
+}
     #data {
         display: grid;
         grid-template-columns: 20% 20% 20% 20%;
         grid-gap: 5%;
+        
     }
 
     img {
         width: 40%;
+        background-color: aqua;
     }
 
     #data div {
         display: flex;
+        
         flex-direction: column;
         align-items: center;
+    }
+    #bt{
+        margin: 200px 600px
+    }
+    #bt button{
+        width: 150px;
+        height: 40px;
+        font-size: 20px;
+
     }
 </style>
 
 <body>
     <h1>Products Inventory</h1>
-    <button> <a href="card.html">Visit</a></button>
+ 
+
     <div id="data"></div>
-    
+       <div id="bt"> <button> <a href="card.html">Visit My card</a></button></div>
+
 </body>
 
 </html>
@@ -40,42 +58,45 @@
 
     //Step 1 - create products data - array of objects
 
-    const detergents = [
-        {
-            name: "Nirma",
-            price: "10",
-            image: "https://n2.sdlcdn.com/imgs/b/3/0/Nirma-Detergent-Powder-Nirma-Washing-SDL602226993-1-15845.jpg",
-        },
-
-        {
-            name: "Surf excel",
-            price: "20",
-            image: "https://m.media-amazon.com/images/I/61rDJVoKpeL._SL1000_.jpg",
-        },
-        {
-            name: "Tide",
-            price: "30",
-            image: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Tide_logo.svg/1200px-Tide_logo.svg.png",
-        },
-        {
-            name: "wheel",
-            price: "60",
-            image: "https://5.imimg.com/data5/QV/MX/MY-8609988/wheel-powder-500x500.jpg",
-        },
-        {
-            name: "ghadi",
-            price: "40",
-            image: "https://m.media-amazon.com/images/I/61SZYb3O-wL._SL1399_.jpg",
-        },
-        {
-            name: "ariel",
-            price: "50",
-            image: "https://5.imimg.com/data5/HE/VA/SO/SELLER-46615966/111-500x500.jpg",
-        },
+   const detergents = [{
+        name:"Watch",
+        price : "250",
+        image:"https://rukminim1.flixcart.com/image/880/1056/kbl4cy80/watch/r/m/o/skm-1155-blue-skmei-original-imafsvz4jx3zvqd9.jpeg?q=50",
+    },
+    {
+        name:"Shoes",
+        price : "250",
+        image:"https://media-cldnry.s-nbcnews.com/image/upload/t_fit-2000w,f_auto,q_auto:best/newscms/2020_17/3318911/200422-eco-shoes-2x1-al-1218.jpg",
+    },
+    {
+        name:"Phone",
+        price : "250",
+        image:"https://rukminim1.flixcart.com/image/612/612/k52s58w0/headphone/q/v/b/zebronics-zeb-symphony-original-imafnuefgmr5etzv.jpeg?q=70",
+    },{
+        name:"Headphones",
+        price : "250",
+        image:"https://rukminim1.flixcart.com/image/612/612/k0vbgy80pkrrdj/headphone/u/m/j/boat-bassheads-900-super-extra-bass-original-imafg96fxtvvbghf.jpeg?q=70",
+    },{
+        name:"Maggi",
+        price : "250",
+        image:"https://rukminim1.flixcart.com/image/280/280/k40798w0/noodle/k/a/y/840-masala-instant-noodles-maggi-original-imafny8hdrgrm7jd.jpeg?q=70",
+    },{
+        name:"Specs",
+        price : "250",
+        image:"https://rukminim1.flixcart.com/image/150/150/k070zgw0/sunglass/w/p/z/free-size-sg-45-eyevy-original-imafh5jbtv4np5gz.jpeg?q=70",
+    },{
+        name:"Cap",
+        price : "250",
+        image:"https://rukminim1.flixcart.com/image/150/150/kbjox3k0/cap/p/z/u/free-vroc-nb-vrojass-original-imafsuqywhkzhfcs.jpeg?q=70",
+    },{
+        name:"Sofa",
+        price : "250",
+        image:"https://rukminim1.flixcart.com/image/150/150/jfk00i80/inflatable-sofa/d/g/q/pvc-leatherette-2-seater-inflatable-sofa-color-black-wds-original-imaf3j6fzyhywqrq.jpeg?q=70",
+    },
     ];
 
     //Step 2 - Convert to JSON
-
+   // console.log(myprd);
     const detergents_json = JSON.stringify(detergents);
 
     //step 3 - Store above data in localstorage
@@ -89,7 +110,7 @@
     //Step 4.1 - convert into operatable format, object!
 
     myDetergents = JSON.parse(myDetergents);
-
+    //var cnt=1;
     function showProducts() {
         let data_div = document.getElementById("data");
 
@@ -111,9 +132,14 @@
             let btn = document.createElement("button");
 
             btn.innerText = "Add to card";
+            // let count = document.createElement("text");
+
+            // cnt=1;
             btn.onclick = function () {
                 addtoCard(product);
-            }
+
+
+            };
 
             div.append(image, p_name, p_price, btn);
 
@@ -122,22 +148,28 @@
     }
 
     showProducts();
-    if(localStorage.getItem("cart") === null) {
+    if (localStorage.getItem("card") === null) {
         localStorage.setItem("card", JSON.stringify([]));
     }
+
+
+   var cardtemp=[];
     function addtoCard(p) {
 
-        //need the details of that specific product
-
-
-        //we need to store - array of objects -localstorage
-        //add products to the card
 
         let card_data = JSON.parse(localStorage.getItem("card"));
-
-        card_data.push(p);
-
+        
+        for(key in card_data){
+            cardtemp.push(card_data[key].name);
+        }
+        if(cardtemp.indexOf(p.name)  != -1){
+            alert("proud is present")
+        }else{
+            card_data.push(p);
+        }
         localStorage.setItem("card", JSON.stringify(card_data));
 
     }
+  const check = obj => obj.name === "p.name";
+    
 </script>

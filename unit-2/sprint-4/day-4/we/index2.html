@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Tatkal Booking System</h1>
+
+    <button onclick="chechAvailability()">Check Availablitily</button>
+</body>
+</html>
+<script>
+
+let BtoG = ['Superman','Batman','Ironman','Shaktiman','chotaBheem','Krish','spiderman','JunioR g','chacha chaudhary'];
+let PtoG = ['Superman','Batman','Ironman','Shaktiman','chotaBheem','Krish','spiderman','JunioR g','chacha chaudhary']
+let MtoG = ['Superman','Batman','Ironman','Shaktiman','chotaBheem','Krish','spiderman','JunioR g','chacha chaudhary']
+function chechAvailability(){
+    let promise = new Promise(function(resolve,reject){
+
+        setInterval(function(){
+
+            if(BtoG.length<6){
+            resolve("BtoG has seats availible");
+        }else if(MtoG.length<6){
+            resolve("MtoG has seats availible");
+        }else if(PtoG.length<6){
+            resolve("PtoG has seats availible");
+        }
+
+
+        },1000);
+    });
+
+        promise.then(function(res){
+            console.log(res);
+            clearInterval(interval);
+        });
+        
+    
+
+
+
+
+}
+
+    function cancelTicket(){
+
+        let cacelling_speed1 = Math.round(Math.random()*5)
+          let cacelling_speed2 = Math.round(Math.random()*5)
+            let cacelling_speed3 = Math.round(Math.random()*5)
+
+            setTimeout(function(){
+                     BtoG.pop();
+            },cacelling_speed1*1000)
+
+            console.log(BtoG)
+            setTimeout(function(){
+                     MtoG.pop();
+            },cacelling_speed2*1000)
+             console.log(MtoG)
+
+            setTimeout(function(){
+                     PtoG.pop();
+            },cacelling_speed3*1000)
+             console.log(PtoG)
+       
+
+    }
+   
+
+    var interval = setInterval(cancelTicket,2000);
+
+
+
+
+
+
+
+
+
+</script>

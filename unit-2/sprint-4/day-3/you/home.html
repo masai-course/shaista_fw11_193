@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+                background-color: rgb(5, 5, 36);
+            color: #ddd;
+        }
+
+        nav {
+            background-color: blue;
+
+        }
+
+        nav a {
+            float: right;
+            display: block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px;
+            text-decoration: none;
+            font-size: 20px;
+        }
+
+        nav button{
+            font-size: 10px;
+            padding: 5px;
+            margin:20px;
+        }
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+
+        .sticky {
+            position: fixed;
+            top: 0;
+            width: 100%;
+        }
+        
+         #data_div {
+       margin-top: 100px;
+     
+      width: 2100px;
+        display: grid;
+        grid-template-columns: 20% 20% 20% ;
+        grid-gap: 5%;
+        
+    }
+    #data_div div{
+        align-items: center;
+         display: flex;
+        
+        flex-direction: column;
+        padding: 20px;
+        
+    }
+    #data_div div p+button{
+        width: 100px;
+    }
+    img{
+        width: 400px;
+        height: 400px;
+    }
+
+    #xx{
+        margin: 100px 200px;
+
+    }
+
+    </style>
+    
+</head>
+
+<body>
+    <nav class="sticky content">
+
+        <a href="singup.html">Singup</a>
+        <a href="login.html">Login</a>
+        <a href="home.html">Home</a>
+        <button onclick="ltoh()"> Sort Low to High</button>
+       
+    </nav>
+    <div id="xx"></div>
+    <div id="data_div"></div>
+    
+</body>
+
+</html>
+<script>
+var i = 0; 			// Start Point
+var images = [];	// Images Array
+var time = 3000;	// Time Between Switch
+	 
+// Image List
+images[0] = "https://www.filmjabber.com/movie-poster-thumbs/last-night-in-soho-movie-poster-6508.jpg";
+images[1] = "https://www.indiewire.com/wp-content/uploads/2019/12/beach_bum.jpg?w=510";
+images[2] = "https://i.redd.it/hutqvp8fovv51.jpg";
+images[3] = "https://www.indiewire.com/wp-content/uploads/2020/12/black_bear.jpg?w=523";
+
+// Change Image
+var image = document.createElement("img");
+image.setAttribute("name","slide");
+
+
+image.style.width="1000px"
+image.style.height="600px";
+   let data = document.getElementById("xx");
+data.append(image)
+function changeImg(){
+	document.slide.src = images[i];
+
+	// Check If Index Is Under Max
+	if(i < images.length - 1){
+	  // Add 1 to Index
+	  i++; 
+	} else { 
+		// Reset Back To O
+		i = 0;
+	}
+
+	// Run function every x seconds
+	setTimeout("changeImg()", time);
+}
+
+// Run function when page loads
+window.onload=changeImg;
+
+var movies=[{
+    name:"The Conjuring",
+    date:2021,
+    rating:4.0,
+    poster:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCURQBHGn6Zo2Q9nUai2UmJi21incKcR7J3g&usqp=CAU"
+},{
+    name:"Heza",
+    date:2020,
+    rating:7.0,
+    poster:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYKmwxhwRVyi055zB3zaOX52gBnIacicPzdQz6PinSDH6un7mqeoVzagU0MzU7OEwySJc&usqp=CAU"
+},{
+    name:"HIMMATWALA",
+    date:"1999",
+    rating:5.0,
+    poster:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSeJf_cx_joaBUYq_9uWrt7SCt9ZVOSG68Dmg&usqp=CAU"
+},{
+    name:"JUMANJI",
+    date:1998,
+    rating:7.0,
+    poster:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRogrdIcb_xKocgEaGKILrLh8E7JTBW-9FDArNMTlTl3mFsmjTL2u3w3zT0P7DWK5ld7HE&usqp=CAU"
+},{
+    name:"BRIGHTBURN",
+    date:1990,
+    rating:6.0,
+    poster:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOGvygwmHxYtKk7BplOybuS2M07eVO94yapA&usqp=CAU"
+},{
+    name:"RADHE SHAM",
+    date:2018,
+    rating:8.0,
+    poster:"https://imgcdn.ragalahari.com/mar2021/designs/radhe-shyam-posters/radhe-shyam-posters1t.jpg"
+},{
+    name:"The Nightgale",
+    date:2001,
+    rating:10,
+    poster:"https://rukminim1.flixcart.com/image/416/416/jv19qq80/poster/h/m/h/medium-endgameart-capt-america-avengers-endgame-new-poster-original-imafgy6yft4zyuka.jpeg?q=70"
+},{
+    name:"Hello",
+    date:2008,
+    rating:9.0,
+    poster:"https://s.yimg.com/ny/api/res/1.2/QfqQ7Zkm3VBZpRvr_4qeMQ--/YXBwaWQ9aGlnaGxhbmRlcjt3PTY0MA--/https://media.zenfs.com/en-US/pop_diaries_903/a9519aa0298fe88874a26fb5082c140b"
+},{
+    name:"JUMANJI",
+    date:2007,
+    rating:8.0,
+    poster:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRogrdIcb_xKocgEaGKILrLh8E7JTBW-9FDArNMTlTl3mFsmjTL2u3w3zT0P7DWK5ld7HE&usqp=CAU"
+}
+]
+  
+// document.getElementById("demo").innerHTML=movies;
+
+var count =0;
+function ltoh(){
+     count++; 
+     }
+if(count==1){
+movies.sort(function(a, b) { return b.rating - a.rating; });
+}else{
+ movies.sort(function(a, b) { return a.rating - b.rating; });   
+}console.log(count);
+    //step 3 - Store above data in localstorage*/
+
+    
+const movies_json = JSON.stringify(movies);
+    localStorage.setItem("myMovies", movies_json);
+
+    //Step 4 - Display on webpage
+
+    let myMovies = localStorage.getItem("myMovies");
+
+    //Step 4.1 - convert into operatable format, object!
+
+    myMovies = JSON.parse(myMovies);
+    //var cnt=1;
+    function showProducts() {
+        let data_div = document.getElementById("data_div");
+
+        myMovies.forEach(function (movies) {
+            let div = document.createElement("div");
+
+            let p_name = document.createElement("p");
+
+            p_name.innerText = movies.name;
+
+            let date = document.createElement("p");
+
+            date.innerText = movies.date;
+
+            let rating = document.createElement("p");
+
+            rating.innerText = movies.rating;
+
+            let poster = document.createElement("img");
+
+            poster.src = movies.poster;
+
+            let btn = document.createElement("button");
+
+            btn.innerText = "Book movie";
+            
+            div.append(poster, p_name, date,rating, btn);
+
+            data_div.append(div);
+        });
+    }
+
+    showProducts();
+</script>
