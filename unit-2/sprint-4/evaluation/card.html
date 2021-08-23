@@ -5,6 +5,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+      #data{
+            display: grid;
+            grid-template-columns: 30% 30% 30%;
+            grid-gap:5%;
+        }
+        img{
+            width:50%
+        }
+        #data div{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    </style>
 </head>
 <body>
     <h1>Welcome to your card</h1>
@@ -27,10 +42,9 @@
     let card_data = JSON.parse(localStorage.getItem("card"));
     console.log("card_data:", card_data);
 
-    let data_div = document.getElementById("data");
     var total = 0;
     var totalitem =0;
-   
+ var data_div = document.getElementById("data")
             card_data.forEach(function (product){
                 let div = document.createElement("div");
                 let name = document.createElement("p");
@@ -41,13 +55,15 @@
                 image.src= product.image;
                 let brand = document.createElement("p");
                 brand.innerText= product.brand;
-                data.append(div);
+                
+                div.append(image,name,cost,brand)
 
         data_div.append(div);
-        total = total + Number(product.price);
+        total = total + Number(product.cost);
          totalitem = totalitem+Number(1);
          //console.log(totalitem);
     });
+
 
     var total_h1 = document.getElementById("total");
 
@@ -57,12 +73,6 @@
 
     totalitems.innerText = `Total Items- ${(totalitem)}`
 
-   /* function makepayment() {
-        setTimeout(function () {
-            alert("Payment Successful");
-        }, 4000);
-    }
-*/
    // console.log(totalitem);
     function promo(total) {
         var code = document.getElementById("code").value;
