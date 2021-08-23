@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>APP</title>
+    <style>
+    </style>
 </head>
 <body>
     <div id="products"><h1>Welcome to Jwellerys</h1></div>
@@ -57,7 +59,7 @@
             cost:  2000 ,
             image:"https://rukminim1.flixcart.com/image/580/696/kjem3rk0-0/jewellery-set/a/b/q/skr70050-sukkhi-original-imafyzfsjqgmubz4.jpeg?q=50" ,
             brand:"malbar",
-        }{
+        },{
             name:"zinc gold plate",
             cost:  488 ,
             image:"https://rukminim1.flixcart.com/image/580/696/jewellery-set/y/v/e/263cb1960-d1-sukkhi-original-imae9r324hvv353f.jpeg?q=50" ,
@@ -75,26 +77,48 @@
         }
 
         ]
-
-        const products_json =JSON.stringify(proudcts);
+console.log(products)
+        const products_json =JSON.stringify(products);
 
         localStorage.setItem("MyjProducts",products_json);
 
         let MyjProducts = localStorage.getItem("MyjProducts");
 
-        MyjProducts = JSON.parse("Myjproducts");
+        MyjProducts = JSON.parse(MyjProducts);
 
         function viewProducts(){
-            
+
             let data = document.getElementById("products");
 
             MyjProducts.forEach(function (product){
                 let div = document.createElement("div");
                 let name = document.createElement("p");
-                name.
+                name.innerText= product.name;
+                let cost = document.createElement("p");
+                cost.innerText= product.cost;
+                 let image = document.createElement("img");
+                image.src= product.image;
+                let brand = document.createElement("p");
+                brand.innerText= product.brand;
+                data.append(div);
 
+                let btn = document.createElement("button");
+                btn.innerText = "Add to card"
 
-            })
+                btn.onlick = function(){
+                    addtoCard(product);
+                }
 
+                div.append(image,name,cost,brand,btn);
+                data.append(div);
+            });
         }
+        viewProducts();
+
+
+
+
+
+
+         
 </script>
