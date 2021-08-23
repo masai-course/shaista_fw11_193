@@ -12,9 +12,18 @@
     <label for="">card last 4 digits</label>
     <input type="code">
     <br>
-    <label >Enter city name</label>
+    <label >Enter expery year</label>
     <input type="text" >
     <br>
-    <button id="data">make payment</button>
+    <button onclick="makepay()">place order </button>
+    <div id="msg"></div>
 </body>
 </html>
+<script>
+function makepay() {
+        setTimeout(function () {
+            var msg = document.getElementById("msg")
+        msg.innerText="Your order is successfully placed";
+        }, 3000);
+    }
+</script>
