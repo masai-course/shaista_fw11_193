@@ -42,8 +42,39 @@
             var rate=data.imdbRating;
             var time = data.Runtime;
             var post = data.Poster;
+            if(title!= undefined && Number(rate)>8.5){
+                  var data = document.getElementById("data");
+            data.innerHTML=" ";
+            var div = document.createElement("div");
+
+            var Movie_tag = document.createElement("p");
+            Movie_tag.innerText=`This movie is recommended one`;
+            Movie_tag.style.color="red";
+
+            var Movie_name = document.createElement("p");
+            Movie_name.innerText=`Name of Movie : ${title}`;
+           
+
+              var mov_Released = document.createElement("p");
+            mov_Released.innerText=`Movie Released on : ${rat}`;
+
+
+             var mov_imbdRating = document.createElement("p");
+            mov_imbdRating.innerText=`Movie imdbRating : ${rate}`;
+
             
-            if(title!= undefined){
+              var mov_runtime = document.createElement("p");
+            mov_runtime.innerText=`Movie RunTime  : ${time}`;
+
+            var mov_poster = document.createElement("img");
+            mov_poster.src= post;
+
+            data.append(div);
+            Movie_name.append(Movie_tag);
+            div.append(Movie_name,mov_Released,mov_imbdRating,mov_runtime,mov_poster);
+
+            }
+            else if(title!= undefined){
             var data = document.getElementById("data");
             data.innerHTML=" ";
             var div = document.createElement("div");
