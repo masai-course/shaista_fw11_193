@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,8 +13,7 @@
         margin-left:40%;
     }
     #data{
-        display: flex;
-        grid-template-columns: 30%;
+     margin: 100px;
         text-align: center;
         font-size: 20px;
       
@@ -31,20 +29,22 @@
 
 </html>
 <script>
-    async function getweather() {
-        try {
+    function getweather() {
+        
             let name = document.getElementById("movie").value;
 
-            var res = await fetch(`http://www.omdbapi.com/?t=${name}&apikey=8be13c63`);
-
-            var data = await res.json();
+            fetch(`http://www.omdbapi.com/?t=${name}&apikey=8be13c63`)
+            .then(function (res){
+            res.json().then(function(data){
             console.log("res:", data);
             var title=(data.Title)
             var rat=(data.Released)
             var rate=data.imdbRating;
             var time = data.Runtime;
             var post = data.Poster;
+            if(title!= undefined){
             var data = document.getElementById("data");
+            data.innerHTML=" ";
             var div = document.createElement("div");
 
             var Movie_name = document.createElement("p");
@@ -66,11 +66,25 @@
             mov_poster.src= post;
 
             data.append(div);
-            div.append(mov_Released,mov_imbdRating,mov_runtime,mov_poster);
-        }
-        catch (err) {
+            div.append(Movie_name,mov_Released,mov_imbdRating,mov_runtime,mov_poster);
+            }else{
+                 var data = document.getElementById("data");
+                 
+            var div = document.createElement("div");
+            data.innerHTML=" ";
+            var mov_poster = document.createElement("img");
+            mov_poster.src= "https://c.tenor.com/IHdlTRsmcS4AAAAM/404.gif";
+
+            data.append(div);
+            div.append(mov_poster);
+            }
+        })
+    
+        .catch(function (err) {
             console.log("err:", err);
-        }
+        })
+     
+            })
     }
   //  getweather();
 </script>
