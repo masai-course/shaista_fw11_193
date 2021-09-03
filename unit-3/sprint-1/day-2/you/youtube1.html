@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Document</title>
+    <style>
+        #videos-div{
+            display: grid;
+            grid-template-columns: 20% 20% 20% 20%;
+            grid-gap: 3% 5%;
+
+        }
+          nav{
+            background-color: white;
+        }
+    
+        p{
+            margin: 0px;
+            float: left;
+            font-size: 20px;
+        }
+        #id{
+            width: 100%;
+            margin-left: 50%;
+            /* background-color: aliceblue; */
+        }
+        img{
+            width:60%;
+            height: 50%;
+        }
+        button{
+            width: 2.5%;
+        }
+        #video{
+            max-height: 10%;
+            width: 30%;
+        }
+        </style>
+</head>
+<body>
+    <nav>
+        <i class="fa fa-youtube-play" style="font-size:25px;color:red;float:left"></i> <p>YouTube</p>
+        <div id="id"> <input type="text" id="video" placeholder="Search for video...">
+           <button onclick="searchvideos()"><img src="https://www.ss396.com/images/icons/Order_Lookup.png" alt=""></button></div>
+           </nav><br><br>
+   
+    <div id="videos-div"></div>
+</body>
+</html>
+
+
+<script>
+
+
+
+    async function searchvideos() {
+
+
+        let video = document.getElementById("video").value;
+
+        let div = document.getElementById("videos-div")
+
+        let res = await fetch(`https://youtube.googleapis.com/youtube/v3/search?q=${video}&type=video&key=AIzaSyAQYT3mUQCPn-F8rrM4I4KCYG5BzLTdMxU&maxResults=20`);
+        let data = await res.json();
+
+        console.log("data:", data);
+
+        for ({
+            id: { videoId },
+        } of data.items) {
+            let video_frame = document.createElement("iframe");
+
+            video_frame.src = `https://www.youtube.com/embed/${videoId}`
+            video_frame.allow = `fullscreen`;
+            div.appendChild(video_frame);
+        }
+    }
+</script>
