@@ -23,8 +23,4 @@ function append(data, place){
         place.append(div);
     })
 }
-
-
-
-
 export {append, getData} ;
