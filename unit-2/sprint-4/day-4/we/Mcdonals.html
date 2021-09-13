@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    #data{
+        text-align: center;
+        padding: 200px;
+    }
+    </style>
+</head>
+
+<body>
+
+    <form method="post" action="display.html    " id="data">
+        <label>Order Items You need</label><br />
+        <input type="checkbox" id="checkbox1" name="bike" value="KFC"> KFc <br />
+        <input type="checkbox" id="checkbox2" name="car" value="Burger"> Burger <br />
+        <input type="checkbox" id="checkbox3" name="car" value="Pizza"> Pizza <br />
+        <input type="checkbox" id="checkbox4" name="car" value="French fries"> Frech fries <br />
+        <input type="checkbox" id="checkbox5" name="car" value="Cold Coffee "> Cold coffee <br />
+
+
+
+        <input type="checkbox" id="checkbox6" name="home" value="Hot Coffe">Hot Coffee <br />
+        <input type="submit" onclick="getValue()" value="Order now" />
+    </form>
+
+    <p id="p1"></p>
+    <script>
+        function getValue() {
+            var ele = []
+            var bike = document.getElementById("checkbox1")
+            if (bike.checked) {
+                ele.push(bike.value);
+            }
+            var car = document.getElementById("checkbox2")
+            if (car.checked) {
+                ele.push(car.value);
+            }
+            var home = document.getElementById("checkbox3")
+            if (home.checked) {
+                ele.push(home.value);
+            }
+            var piza = document.getElementById("checkbox4")
+            if (piza.checked) {
+                ele.push(piza.value);
+            }
+            var fries = document.getElementById("checkbox5")
+            if (fries.checked) {
+                ele.push(fries.value);
+            }
+            var hot = document.getElementById("checkbox6")
+            if (hot.checked) {
+                ele.push(hot.value);
+            }
+            const ele_json = JSON.stringify(ele);
+
+            //step 3 - Store above data in localstorage
+
+            localStorage.setItem("order", ele_json);
+
+        }
+
+
+
+    </script>
+</body>
+
+</html>

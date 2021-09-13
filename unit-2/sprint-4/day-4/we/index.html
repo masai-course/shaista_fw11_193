@@ -20,6 +20,7 @@
 
 
     <button onclick="register()"> Register</button>
+    <div id="hee"></div>
 </body>
 </html>
 
@@ -48,9 +49,14 @@ function register(){ //function to start registration
    });
 
     console.log(promise);
-
+   
    promise.then(function(res){
        console.log("res:", res);
+ let div = document.createElement("p");
+    div.innerText = res;
+    var he = document.getElementById("hee")
+he.append(div);
+
    })
 
 }
@@ -58,7 +64,7 @@ function register(){ //function to start registration
 function startVaccination(){
     queue.shift();
     console.log("queue:",queue);
-
+    console.log(queue.length)
     if(queue.length === 0){
         clearInterval(interval);
     }

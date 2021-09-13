@@ -8,19 +8,19 @@
     <title>Document</title>
     <style>
         body {
-                background-color: rgb(5, 5, 36);
-            color: #ddd;
+                background-color: rgb(1, 1, 10);
+            color: rgb(221, 22, 178);
         }
 
         nav {
-            background-color: blue;
+            background-color: rgb(1, 1, 8);
 
         }
 
         nav a {
             float: right;
             display: block;
-            color: #f2f2f2;
+            color: #e71095;
             text-align: center;
             padding: 14px;
             text-decoration: none;
@@ -65,12 +65,13 @@
         width: 100px;
     }
     img{
-        width: 400px;
-        height: 400px;
+        width: 300px;
+        height: 300px;
+        border-radius: 10px;
     }
 
     #xx{
-        margin: 100px 200px;
+        margin: 100px 50px;
 
     }
 
@@ -84,7 +85,7 @@
         <a href="singup.html">Singup</a>
         <a href="login.html">Login</a>
         <a href="home.html">Home</a>
-        <button onclick="ltoh()"> Sort Low to High</button>
+        <button id="change"> Sort Low to High</button>
        
     </nav>
     <div id="xx"></div>
@@ -109,7 +110,7 @@ var image = document.createElement("img");
 image.setAttribute("name","slide");
 
 
-image.style.width="1000px"
+image.style.width="1400px"
 image.style.height="600px";
    let data = document.getElementById("xx");
 data.append(image)
@@ -180,19 +181,7 @@ var movies=[{
 }
 ]
   
-// document.getElementById("demo").innerHTML=movies;
-
-var count =0;
-function ltoh(){
-     count++; 
-     }
-if(count==1){
-movies.sort(function(a, b) { return b.rating - a.rating; });
-}else{
- movies.sort(function(a, b) { return a.rating - b.rating; });   
-}console.log(count);
-    //step 3 - Store above data in localstorage*/
-
+    console.log(movies)
     
 const movies_json = JSON.stringify(movies);
     localStorage.setItem("myMovies", movies_json);
@@ -205,6 +194,7 @@ const movies_json = JSON.stringify(movies);
 
     myMovies = JSON.parse(myMovies);
     //var cnt=1;
+    
     function showProducts() {
         let data_div = document.getElementById("data_div");
 
@@ -214,6 +204,7 @@ const movies_json = JSON.stringify(movies);
             let p_name = document.createElement("p");
 
             p_name.innerText = movies.name;
+
 
             let date = document.createElement("p");
 
@@ -235,7 +226,8 @@ const movies_json = JSON.stringify(movies);
 
             data_div.append(div);
         });
+    
+   
     }
-
     showProducts();
 </script>

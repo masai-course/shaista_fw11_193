@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <Style>
+   
+    </Style>
+</head>
+<body>
+    <div id="data"></div>
+    <p id="xyz"></p>
+</body>
+</html>
+
+
+<script >
+let num=  Math.floor(Math.random() * 10);
+let order = localStorage.getItem("order");
+
+    //Step 4.1 - convert into operatable format, object!
+
+   order = JSON.parse(order);
+    console.log(order);
+    let promise = new Promise(function(resolve,reject){
+
+       setInterval(function(){
+        var data = document.getElementById("data");
+        data.innerHTML=order;
+        var dat = document.getElementById("xyz");
+        dat.innerHTML=`Your Id = ${num}`;
+       },2000);//keep on checking for turn
+   });
+      
+</script>
