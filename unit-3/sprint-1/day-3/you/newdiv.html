@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <input placeholder="Search Characters"  oninput="debounce(main,1000)" id="query" class="inputsearch">
+    <div id="movies"  >
+        </div>
+    <div id="info" onclick="display()">hii</div>
+</body>
+</html>
+<script>
+   var timerId;
+
+let movies_div=document.getElementById("movies");
+
+async function searchMovies(n){
+
+    let res = await fetch(`https://swapi.dev/api/people/?search=${n}`);
+    let data=await res.json();
+    console.log("data:",data);
+
+    var results=(data.results);
+    return results
+}
+
+
+function appendMovies(m){
+    movies_div.innerHTML=null;
+    document.getElementById("query").addEventListener("click", function(){
+    document.getElementById("movies").style.display = "block";
+});
+    m.forEach(({name,birth_year,gender,hair_color,mass,height,eye_color}) =>{
+        let p=document.createElement('p');
+        let p1=document.createElement('p');
+        let p2=document.createElement('p');
+        p.innerText=name;
+         p.style.lineHeight="0px"
+        p.onmouseover = function() {mouseOver(p)};
+        p.onmouseout = function() {mouseOut(p)};
+        p.onclick = display(name,birth_year,gender,hair_color,mass,height,eye_color);
+        p1.innerText=birth_year;
+        p2.innerText=gender;
+        p1.style.lineHeight="0px"
+        p2.style.float="right"
+        p2.style.lineHeight="0px"
+        
+          p.append(p2,p1)
+       //p1.append(p2)
+        movies_div.append(p);
+    });
+}
+
+function display(name,birth_year,gender,hair_color,mass,height,eye_color){
+    let div = document.createElement("div")
+    div.innerHTML= name;
+    div.style.width="500px"
+    div.style.height="250px"
+    const h1 = document.createElement("h1");
+    h1.innerText = "name";
+    let div1 = document.createElement("div");
+    let h11 = document.createElement("h1")
+    h11.innerHTML="Personal Information";
+    let by= document.createElement("p");
+    by.innerHTML=`Birth_year = ${birth_year}`
+     let gen= document.createElement("p");
+    gen.innerHTML=`Gender = ${gender}`
+     let h= document.createElement("p");
+    h.innerHTML=`Height = ${height}`
+    div1.append(h11,by,gen,h)
+    div1.style.marginTop="30px"
+    div1.style.width ="200px"
+    div1.style.height ="250px"
+    div1.align="center"
+    div1.style.float ="left";
+    div1.style.border ="thick solid #0000FF"
+    let div2 = document.createElement("div");
+    let h12 = document.createElement("h1")
+    h12.innerHTML="Anatomy";
+    let ec= document.createElement("p");
+   ec.innerHTML=`Eye color = ${eye_color}`
+     let mass= document.createElement("p");
+    mass.innerHTML=`mass = ${mass}`
+     let hc= document.createElement("p");
+    hc.innerHTML=`Hair_color = ${Hair_color}`
+    div2.append(h12,ec,mass,hc)
+    div2.style.marginTop="30px"
+    div2.style.width ="200px"
+    div2.style.height ="250px"
+    div2.align="center"
+     div2.style.border ="thick solid #0000FF"
+    div2.style.float="right";
+    div.append(div1,div2)
+
+}
+function mouseOver(p) {
+  p.style.color = "yellow";
+}
+
+function mouseOut(p) {
+  p.style.color = "white";
+}
+
+async function main(){
+
+    let nam=document.getElementById("query").value;
+    let movies= await searchMovies(nam);
+    // if(name.length<3){
+    //     return false;
+    // }
+    //searchMovies(name);
+    
+    if(movies===undefined){
+        return false;
+    }
+    appendMovies(movies);
+
+    console.log("movies:",movies);
+}
+
+function debounce(func, delay){
+    let nam=document.getElementById("query").value;
+    // if(nam.length<3){
+    //     return false;
+    // }
+    if(timerId){
+        clearTimeout(timerId);
+    }
+    timerId=setTimeout(()=>{
+        func();
+    },delay);
+}
+</script>

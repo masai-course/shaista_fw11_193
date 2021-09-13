@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Search</title>
+</head>
+<link rel="stylesheet" href="/css/style.css">
+
+<body>
+  <input type="text" oninput="debounce(1000)" id="query" placeholder="Search here for meal"> 
+  <div id="input"></div>
+  <div id="data"></div>
+</body>
+
+</html>
+<script type="module">
+  
+
+  import navbar from "./navbar.js";
+
+
+  import {getData,append} from "./Search.js"
+
+
+  let div = document.createElement("div");
+
+  div.innerHTML = navbar();
+  document.body.prepend(div);
+    // console.log(getData)
+        async function main() {
+          
+          
+
+          let name = document.getElementById("query").value;
+          let items = await getData(name);
+          console.log("items:", items);
+              if (items === undefined) {
+                return false;
+              }
+                let place = document.getElementById("data")
+                place.innerHTML=" ";
+                append(items, place);
+
+                console.log("items:", items);
+        }
+       // console.log(main(event));
+  var timerId;
+    window.debounce = ( delay) => {
+        let name = document.getElementById("query").value;
+      
+        if (timerId) {
+          clearTimeout(timerId);
+        }
+        timerId = setTimeout(() => {
+          main();
+        }, delay);
+      }
+</script>
+
+

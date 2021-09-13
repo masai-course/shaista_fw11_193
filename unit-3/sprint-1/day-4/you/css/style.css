@@ -1,0 +1,53 @@
+#navbar {
+      display: flex;
+
+      justify-content: space-between;
+      text-decoration: none;
+
+      padding-left: 4%;
+      padding-right: 4%;
+      background-color: rgb(223, 252, 250);
+      border: solid 1px rgb(229, 232, 235);
+    }
+    #navbar h3 a {
+        text-decoration: none;
+        color: deeppink;
+    }
+     #options {
+      display: flex;
+      /* justify-content: space-between; */
+    }
+    h1{
+      text-align: center;
+      color: rgb(236, 37, 220);
+    }
+    #options h3 {
+      padding-left: 30px;
+      padding-right: 10px;
+    }
+    img{
+      width: 58%;
+      border-radius: 5%;
+    }
+    #data{
+    display: grid;
+    grid-template-columns: repeat(3,30%);
+    padding: 0%;
+    justify-content: center;
+    grid-gap: 0%;
+    color: rgb(185, 28, 178);
+    margin: 0%;
+    font-size: 20px;
+  }
+   #data1{
+    display: grid;
+    grid-template-columns: repeat(50%);
+    padding: 2%;
+    justify-content: center;
+    grid-gap: 0%;
+    color: rgb(192, 42, 180);
+    font-size: 20px;
+  }
+  body{
+    background-color: rgb(231, 231, 243);
+  }

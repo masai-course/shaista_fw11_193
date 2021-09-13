@@ -1,0 +1,50 @@
+<!-- //AIzaSyAQYT3mUQCPn-F8rrM4I4KCYG5BzLTdMxU -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="id" placeholder="Search for videos...">
+
+
+    <button onclick="searchVideo()">Search</button>
+    <iframe src="" frameborder="0"></iframe>
+</body>
+</html>
+<script>
+
+    /* async function getCountry(){
+        let name = await fetch("https://restcountries.eu/rest/v2/all");
+        let data = await name.json();
+        console.log("data:",data);
+
+
+        for(let {name,capital,population} of data){
+
+        
+           
+            console.log("name, capital, population:", name, capital,population);
+        } 
+
+    }*/
+
+    async function searchVideo(){
+        
+        let vedio= document.getElementById("id").value;
+        let res = await fetch(`https://youtube.googleapis.com/youtube/v3/search?part=${vedio}&type=video&key=AIzaSyAQYT3mUQCPn-F8rrM4I4KCYG5BzLTdMxU`);
+        let data = await res.json();
+        console.log("data:",data);
+    for({
+        id:{videoId},}of dat.items){
+            console.log("videoId:",videoId);
+        }
+    
+
+    }
+
+
+</script>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    input{
+        width: 200px;
+    }
+    #movies{
+        width: 206px;
+        border-top: none;
+        overflow: scroll;
+    }
+</style>
+<body>
+    <h1>Debouncing</h1>
+
+    <input type="text" oninput="debounce(main,1000)" id="query">
+<div id="movies"></div>
+</body>
+</html>
+<script>
+    //1.get the input
+    //2.search movie by name
+    //3.append
+
+    var timerId;
+
+   let movies_div=document.getElementById("movies");
+
+    async function searchMovies(n){
+
+        let res = await fetch(`https://swapi.dev/api/people/?search=${n}`);
+        let data=await res.json();
+        console.log("data:",data);
+
+        var results=(data.results);
+      //  console.log(results.Search)
+        return results;
+    }
+
+
+    function appendMovies(m){
+       // movies_div.innerHTML=null;
+        m.forEach(({name,height,mass,hair_color,skin_color}) =>{
+          
+            let p=document.createElement('p');
+            p.innerText=name;
+            document.body.append(movies_div)
+            movies_div.append(p);
+        });
+    }
+
+    async function main(){
+
+        let name=document.getElementById("query").value;
+        let movies= await searchMovies(name);
+       
+         console.log("movies:",movies);
+        if(movies===undefined){
+            return false;
+        }
+        appendMovies(movies);
+
+        console.log("movies:",movies);
+    }
+
+    function debounce(func, delay){
+        let name=document.getElementById("query").value;
+       
+        if(timerId){
+            clearTimeout(timerId);
+        }
+        timerId=setTimeout(()=>{
+            func();
+        },delay);
+    }
+
+</script>
