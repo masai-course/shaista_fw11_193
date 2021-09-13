@@ -7,16 +7,59 @@
     <title>Document</title>
 </head>
 <body>
-    <input type="text" id="inpt" oninput="debounce(1000)" placeholder="Search for news">
+<h3>Search news you want</h3>
+    <input type="text" id="inpt" oninput="getnews()" placeholder="Search for news">
 </body>
 </html>
 <script type="module">
 
 import sidebar from "./components/sidebar.js"
+ window.getnews=()=>{
+    let news = document.getElementById("inpt").value;
+    fetch(`https://newsapi.org/v2/everything?q=${news}&apiKey=e06e955c479d419f82b80d713737af8d`)
+    .then(function(res){
+        res.json().then(async function(data){
+           var dat = await data.articles
 
 
+        dat.forEach(({description,urlToImage,image,author,publishedAt,title,url}) =>{
+        let div = document.createElement("div");
+        let tit = document.createElement("h1");
+        let aut = document.createElement("p");
+        let pub = document.createElement("p");
+        let dis = document.createElement("p");
+        let img = document.createElement("img");
 
+        tit.innerHTML=title;
+        aut.innerHTML = author;
+        pub.innerHTML=publishedAt;
+        tit.append(aut,pub);
+        tit.style.float="left";
+        tit.style.width="600px";
+        dis.innerHTML=description;
+        dis.style.width="400px";
+        img.src= urlToImage;
+        img.style.width="20%"
+        img.style.height="15%"
+        img.style.float="right"
+        div.style.display="grid";
+        div.style.gridTemplateColumns="10px"
+        div.style.gridGap="3%"
+        div.append(tit,dis,img)
+        div.style.display="flex";
+        div.style.flexDirection="row"
+
+        div.style.height="10%"
+        div.onclick=function(){
+            window.location.href=url;
+        }
+       document.body.append(div);})
+        })
+    })
 }
+
+
+
 
 
 
