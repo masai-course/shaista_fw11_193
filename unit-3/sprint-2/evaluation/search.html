@@ -7,13 +7,17 @@
     <title>Document</title>
 </head>
 <body>
-    <input type="text" id="inpt" placeholder="Search for news">
+    <input type="text" id="inpt" oninput="debounce(1000)" placeholder="Search for news">
 </body>
 </html>
 <script type="module">
 
 import sidebar from "./components/sidebar.js"
 
-document.body.innerHTML= sidebar();
+
+
+}
+
+
 
 </script>
