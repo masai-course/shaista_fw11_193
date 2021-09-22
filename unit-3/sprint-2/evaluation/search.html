@@ -5,15 +5,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+   #div{
+       float: left;
+       width: 200px;
+       height: 100%;
+   }
+    </style>
 </head>
 <body>
+
+<div id="div"></div>
 <h3>Search news you want</h3>
     <input type="text" id="inpt" oninput="getnews()" placeholder="Search for news">
 </body>
 </html>
 <script type="module">
-
 import sidebar from "./components/sidebar.js"
+var div = document.getElementById("div");
+div.innerHTML= sidebar();
  window.getnews=()=>{
     let news = document.getElementById("inpt").value;
     fetch(`https://newsapi.org/v2/everything?q=${news}&apiKey=e06e955c479d419f82b80d713737af8d`)
@@ -57,10 +67,5 @@ import sidebar from "./components/sidebar.js"
         })
     })
 }
-
-
-
-
-
 
 </script>

@@ -33,7 +33,8 @@ function append(data, place){
         p_price.innerText= `Id of the Meal : ${idMeal}`
         p_Area.innerText=`Area in which this meal is prepared is ${strArea}`
         p_Categry.innerText=`This meals comes in the Category of ${strCategory}`
-        p_instrct.innerText=`Following are the Instructions to prepare this meal : ${strInstructions}`
+        p_instrct.innerText=`Following are the Instructions to prepare this meal : 
+        ${strInstructions}`
         
         div.append(img,p_name,p_price,p_Area,p_Categry,p_instrct);
         place.append(div);

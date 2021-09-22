@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      .spinner{
+          border: 8px solid grey;
+          border-top: 8px solid blue;
+          border-radius: 50%;
+          width: 80px;
+          height: 80px;
+          animation: spinner 1s infinite;
+
+      }
+
+      @keyframes spinner{
+          from{
+              transform: rotate(0deg);
+          }
+          to{
+              transform: rotate(360deg);
+          }
+      }
+      #lines{
+            width: 60px;
+            height: 60px ;
+         }
+        .line1{
+           margin: 5px;
+            width: 60px;
+            height: 12px;
+            background-color: aqua;
+            border-radius: 10px;
+            animation: line1 3s infinite;
+
+        }
+         @keyframes line1{
+          from{
+              transform: rotate(0deg);
+          }
+          to{
+              transform: rotate(60deg);
+          }
+      }
+         .line2{
+            margin: 5px;
+            width: 60px;
+            height: 12px;
+            background-color: aqua;
+            border-radius: 10px;
+            animation: line2 3s infinite;
+
+        }
+        @keyframes line2{
+          from{
+              transform: rotate(0deg);
+          }
+          to{
+              transform: rotate(60deg);
+          }
+      }
+    
+         .line3{
+            margin: 5px;
+            width: 60px;
+            height: 12px;
+            background-color: aqua;
+            border-radius: 10px;
+            animation: line3 3s infinite;
+
+        }
+        @keyframes line3{
+          from{
+              transform: rotate(0deg);
+          }
+          to{
+              transform: rotate(125deg);
+          }
+      }
+
+
+    </style>
+</head>
+<body>
+    <div class="spinner"></div>
+    <div id="lines"> 
+    <div class="line1"> </div>
+     <div class="line2"> </div>
+      <div class="line3"> </div>
+    </div>
+</body>
+</html>
