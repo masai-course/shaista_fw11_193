@@ -24,6 +24,12 @@ app.use(express.json());
 //CRUD --> Create -->Read --->Update --->Delete
 
 
+//Schema for post
+
+
+
+
+
 app.post("/products", async(req,res) =>{
     const product = await Product.create(req.body);
 
