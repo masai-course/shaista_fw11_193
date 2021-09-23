@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            align-items: center;
+            margin : 20% 40%;
+            background-color: black;
+
+
+        }
+        div{
+            width: var(--diameter);
+            height: var(--diameter);
+            top: calc(50%-var((--diameter)/2));
+            left: calc(50%-var((--diameter)/2));
+            border-radius: 50%;
+            position: absolute;
+        }
+        .sun{
+            --moveX:0px;
+            --diameter:150px;
+            background: orangered;
+            position: absolute;
+            
+        }
+        .merc{
+            --moveX:200px;
+            --diameter:20px;
+            background: rgb(199, 8, 8);
+            animation: solarsystem 4s infinite linear;
+        }
+        .venus{
+            --moveX:280px;
+            --diameter:30px;
+            background: rgb(224, 212, 35);
+            animation: solarsystem 3s infinite linear;
+        }
+        .earth{
+            --moveX:350px;
+            --diameter:40px;
+            background: rgb(63, 233, 11);
+            animation: solarsystem 2s infinite linear;
+        }
+        .mars{
+            --moveX:420px;
+            --diameter:45px;
+            background: rgb(155, 7, 76);
+            animation: solarsystem 3s infinite linear;
+        }
+        .sat{
+            --moveX:500px;
+            --diameter:30px;
+            background: rgb(160, 190, 8);
+            animation: solarsystem 2s infinite linear;
+        }
+        @keyframes solarsystem {
+            from{
+                transform: rotate(0deg) translate(var(--moveX));
+            }
+            to{
+                transform: rotate(360deg) translate(var(--moveX));
+            }
+        }
+    </style>
+</head>
+<body>
+    <div  class="sun"></div>
+    <div  class="merc"></div>
+    <div  class="venus"></div>
+    <div  class="earth" ></div>
+    <div  class="mars" ></div>
+    <div  class="sat"></div>
+  
+</body>
+</html>
