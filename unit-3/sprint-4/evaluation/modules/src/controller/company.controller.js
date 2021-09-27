@@ -23,5 +23,9 @@ router.get("",async(req,res)=>{
 
     return res.status(200).send({company});
 })
+router.delete("/:id",async(req,res)=>{
+    const company = await Company.findByIdAndDelete(req.params.id).lean().exec();
 
+    return res.status(200).send({company});
+})
 module.exports = router;

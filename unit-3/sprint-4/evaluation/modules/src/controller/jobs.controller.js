@@ -35,4 +35,16 @@ router.get("/noticeperiod",async(req,res)=>{
     return res.status(200).send({job});
 })
 
+router.patch("/:id",async(req,res)=>{
+    const job = await Job.findByIdAndUpdate(req.params.id);
+
+    return res.status(200).send({job});
+})
+
+router.get("",async(req,res)=>{
+    const job = await Job.find();
+
+    return res.status(200).send({job});
+})
+
 module.exports = router;
