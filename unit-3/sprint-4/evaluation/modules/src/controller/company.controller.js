@@ -3,17 +3,17 @@ const express = require("express")
 
 const router = express.Router();
 
-const Job = require("../models/jobs.model");
+const Company = require("../models/jobs.model");
 
 
 router.post("",async(req,res) =>{
-    const job = await Job.create(req.body);
+    const job = await Company.create(req.body);
 
     return res.status(200).send({job});
 })
 
 router.get("",async(req,res)=>{
-    const job = await Job.find();
+    const job = await Company.find();
 
     return res.status(200).send({job});
 })

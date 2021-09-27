@@ -1,9 +1,7 @@
 const mongoose = require("mongoose");
 
 const jobSchema = new mongoose.Schema({
-    place:{type:String,required:true},
-    notice_period:{type:String,required:true},
-    Rating:{type:String,required:true}
+    name_of_company:{type}
 })
 
 
