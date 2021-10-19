@@ -1,0 +1,9 @@
+const express=require("express");
+
+const mongoose=require("mongoose");
+
+const connect=()=>{
+    return mongoose.connect("mongodb://localhost:27017/evaluation")
+}
+
+module.exports=connect;
