@@ -1,0 +1,9 @@
+.cls{
+    padding: 20px;
+}
+.sqr{
+    list-style-type: square;
+}
+.crl{
+    list-style-type: circle;
+}
