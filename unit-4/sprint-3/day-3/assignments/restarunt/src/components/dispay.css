@@ -1,0 +1,35 @@
+img{
+    float: left;
+    height: 90%;
+    width: 40%;
+    border-radius: 5%;
+}
+.dis{
+display: grid;
+    grid-template-columns:  30%  30% 30%;
+    grid-gap: 4%;
+}
+.div{
+    
+    width: 500px;
+    height: 50%px;
+    line-height: 25%;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 5%;
+    text-align: left;
+    padding: 2%;
+}
+.flo{
+    float:right;
+}
+.bg{
+    background-color: rgb(84, 180, 180);
+    width: 25px;
+    height: 10px;
+    text-align: center;
+    margin-bottom: 0%;
+    color: aliceblue;
+    padding: 4px;
+    border-radius: 3px;
+    font-weight: 35px;
+}

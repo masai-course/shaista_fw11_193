@@ -1,0 +1,18 @@
+form label {
+    width: 150px;
+    height: 36px;
+    margin-left:  5%;
+    background-color: aqua;
+    border-radius: 15%;
+    margin-right: 0.5%;
+}
+form input{
+    width: 150px;
+    height: 30px;
+    border-radius: 10%;
+    border: whitesmoke;
+    background-color: aliceblue;
+}
+form label +input{
+    margin-top: 2%;
+}
