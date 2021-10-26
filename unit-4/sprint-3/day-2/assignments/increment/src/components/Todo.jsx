@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import "./todo.css";
 function Todo(){
     const [text, setText]= useState("");
     const [todos, SetTodos]=useState([]);
@@ -12,19 +13,26 @@ function Todo(){
     }
     
     return (
-    <div>
+    <div className="bc">
     {todos.map((e)=>(
-            <div> {e}</div>
+        <>
+            <div className="div">
+             {e} 
+             <button className="done"> </button>
+              </div>
+            
+            </>
         ))}
     <input
         value={text}
         onChange={handleChange}
         type="text"
-        placeholder="Enter todo"
+        placeholder="Write something"
+
     
     
     />
-    <button onClick={handleAdd}>Add todo</button>
+    <button onClick={handleAdd}>+</button>
     
     
     </div>

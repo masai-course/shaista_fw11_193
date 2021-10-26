@@ -1,9 +1,8 @@
 //import data from './data.json'
 import { useState } from "react";
 import "./rest.css"
-export const Restaturnt = ()=>{
-    const [formData, setFormData] = useState({
-        "payment_method":" ",
+const intial ={
+     "payment_method":" ",
         "total_votes":" ",
         "reviews":" ",
         "cost_for_one":" ",
@@ -12,7 +11,17 @@ export const Restaturnt = ()=>{
         "name":" ",
         "img":" "
 
-    })
+}
+export const Restaturnt = ()=>{
+    const [formData, setFormData] = useState(intial);
+    // useEffect(() =>{
+    fetch("http://localhost:3001/data")
+    .then((d) => d.json())
+    .then((res) =>{
+      console.log("REs",res);
+      setFormData(res);
+ //   },[]);
+  })
   //  setFormData(data);
 
     const handleChange =(e) =>{
@@ -26,65 +35,106 @@ export const Restaturnt = ()=>{
     const handleSubmit =(e)=>{
         e.preventDefault();
         console.log(formData);
+         const {name,value} =e.target;
+          setFormData({
+            ...formData,
+            [name]:value,
+        })
     };
 
     return (
         <form onSubmit={handleSubmit}>
 
-         <label for="html">Name of Restarunt</label>
+         <label for="html">
+         Name of Restarunt
         <input
-        
         name="name"
         onChange={handleChange}
         type="text"
         placeholder="Enter Restarunt Name"
         />
-         <label for="html">Type of food:</label>
-         <input
+        </label>
+       
+
+
+        <label for="html">
+        Type of food:
+        <input
         name="categories"
         onChange={handleChange}
         type="text"
         placeholder="Enter categaries"
         />
-         <label for="html">Cost</label>
+        </label>
+        
+
+
+
+        <label for="html">
+        Cost
         <input
         name="cost_for_one"
         onChange={handleChange}
         type="text"
         placeholder="Enter cost for one"
         />
+        </label>
+
+
         <br/>
-         <label for="html">Payment Method:</label>
+         <label for="html">
+         Payment Method:
         <input
         name="payment_method"
         onChange={handleChange}
         type="text"
         placeholder="Enter Payment method "
         />
-         <label for="html">Votes</label>
+         </label>
         
+         <label for="html">
+         Votes
          <input
         name="total_votes"
         onChange={handleChange}
         type="text"
         placeholder="Enter votes"
         />
-         <label for="html">Reviews</label>
-         <input
+         </label>
+        
+         
+         <label for="html">
+         Reviews
+          <input
         name="reviews"
         onChange={handleChange}
         type="text"
         placeholder="Enter reviews"
         />
+         </label>
         
-          <label for="html">Rating</label>
         
-         <input
+          <label for="html">
+          Rating
+           <input
         name="rating"
         onChange={handleChange}
         type="text"
         placeholder="Enter rating"
         />
+          </label>
+
+          <label for="html">
+          Image
+           <input
+        name="img"
+        onChange={handleChange}
+        type="text"
+        placeholder="Enter url of image"
+        />
+          </label>
+        
+        
         <br/>
         <br/>
         <button type="submit">Submit</button>

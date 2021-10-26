@@ -1,5 +1,7 @@
-export const data =[
+{ 
+    "data" :[
     {
+        "id":1,
         "payment_method":"card",
         "total_votes":200,
         "reviews":300,
@@ -11,10 +13,11 @@ export const data =[
 
     },
      {
+         "id":2,
         "payment_method":"cash",
         "total_votes":500,
         "reviews":300,
-        "cost_for_one":600,
+        "cost_for_one":700,
         "categories":"Pizza",
          "rating":5,
          "name":"URU Brewpark",
@@ -22,10 +25,11 @@ export const data =[
 
     },
      {
+         "id":3,
         "payment_method":"card",
         "total_votes":230,
         "reviews":800,
-        "cost_for_one":600,
+        "cost_for_one":800,
         "categories":"Desserts",
          "rating":3,
          "name":"URU Brewpark",
@@ -33,14 +37,16 @@ export const data =[
 
     },
      {
+         "id":4,
         "payment_method":"card",
         "total_votes":700,
         "reviews":1000,
-        "cost_for_one":600,
+        "cost_for_one":300,
         "categories":"Desserts",
          "rating":3,
          "name":"URU Brewpark",
          "img":"https://img.traveltriangle.com/blog/wp-content/uploads/2017/10/Toit.jpg"
 
     }
-];
+]
+}
