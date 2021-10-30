@@ -11,8 +11,8 @@ export const TodoTnput =({handleAddTodo}) =>{
         const data ={
             id: uuidv4(),
             title :text,
-            state : false,
-            dec:"none"
+            status : false,
+            Dec:"none"
         }
         handleAddTodo(data)
         setText("");
