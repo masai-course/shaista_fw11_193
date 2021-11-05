@@ -1,6 +1,7 @@
 import {useState,useEffect} from "react"
 import './App.css';
 import {Counter} from "./components/Counter"
+import {Todo} from "./components/ToDo"
 function App() {
   const [data,setData]= useState([]);
   useEffect(() =>{
@@ -19,6 +20,7 @@ function App() {
       ))
     }
     <Counter/>
+    <Todo/>
     </div>
   );
 }
