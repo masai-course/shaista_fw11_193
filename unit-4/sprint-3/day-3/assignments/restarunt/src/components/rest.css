@@ -16,3 +16,6 @@ form input{
 form label +input{
     margin-top: 2%;
 }
+button{
+    margin-left: 20%;
+}

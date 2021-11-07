@@ -1,15 +1,16 @@
+import { useEffect } from "react";
 import {useState} from "react"
 import './App.css';
 import {Restaturnt} from "./components/RestatruntDetails"
 function App() { 
   const [data,setData]= useState([]);
- // useEffect(() =>{
+  useEffect(() =>{
     fetch("http://localhost:3001/data")
     .then((d) => d.json())
     .then((res) =>{
       console.log("REs",res);
       setData(res);
-  //  },[data]);
+    },[data]);
   })
   return (
     <>

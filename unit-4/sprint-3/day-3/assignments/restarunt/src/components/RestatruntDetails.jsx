@@ -1,4 +1,5 @@
 //import data from './data.json'
+import { useEffect } from "react";
 import { useState } from "react";
 import "./rest.css"
 const intial ={
@@ -14,13 +15,13 @@ const intial ={
 }
 export const Restaturnt = ()=>{
     const [formData, setFormData] = useState(intial);
-    // useEffect(() =>{
+     useEffect(() =>{
     fetch("http://localhost:3001/data")
     .then((d) => d.json())
     .then((res) =>{
       console.log("REs",res);
       setFormData(res);
- //   },[]);
+    },[formData]);
   })
   //  setFormData(data);
 
@@ -113,7 +114,7 @@ export const Restaturnt = ()=>{
         />
          </label>
         
-        
+         <br/>
           <label for="html">
           Rating
            <input
