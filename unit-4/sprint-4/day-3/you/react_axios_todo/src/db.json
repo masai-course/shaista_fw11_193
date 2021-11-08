@@ -1,0 +1,54 @@
+{
+  "todo": [
+    {
+      "name": "Learn React",
+      "status": false,
+      "id": 1
+    },
+    {
+      "name": "Learn Javascript",
+      "status": false,
+      "id": 2
+    },
+    {
+      "name": "Learn Vue",
+      "status": false,
+      "id": 3
+    },
+    {
+      "name": "Learn TypeScript",
+      "status": false,
+      "id": 4
+    },
+    {
+      "name": "Type nodejs",
+      "status": false,
+      "id": 5
+    },
+    {
+      "name": "Type mongodb",
+      "status": false,
+      "id": 6
+    },
+    {
+      "name": "Aws on masai school",
+      "status": false,
+      "id": 7
+    },
+    {
+      "name": "sql",
+      "status": false,
+      "id": 11
+    },
+    {
+      "name": "Happy using the React",
+      "status": false,
+      "id": 12
+    },
+    {
+      "name": "Add Todo list assignments",
+      "status": false,
+      "id": 13
+    }
+  ]
+}
