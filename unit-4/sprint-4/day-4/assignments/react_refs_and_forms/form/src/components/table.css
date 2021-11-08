@@ -1,0 +1,14 @@
+#table_content{
+    margin:auto;
+    border:1px solid black;
+    text-align:left;
+    width:42%;
+  
+}
+
+#registerbtn {
+    margin-left:100%;
+    width:120px;
+    height:30px;
+    margin-bottom : 20px;
+}

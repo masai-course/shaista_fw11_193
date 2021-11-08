@@ -1,0 +1,31 @@
+{
+  "register": [
+    {
+      "name": "S Shaista Sulthana",
+      "age": "20",
+      "address": "4-48, Dandapalli,Ganagavaram,Chitoor",
+      "dept": "FSAD",
+      "salary": "90000000",
+      "isMarried": false,
+      "id": "1636186702283"
+    },
+    {
+      "name": "zindagi",
+      "age": "20",
+      "address": "ggg",
+      "dept": "enginer",
+      "salary": "500000",
+      "isMarried": false,
+      "id": "1636382866451"
+    },
+    {
+      "name": "coding",
+      "age": "20",
+      "address": "jaipur",
+      "dept": "SoftwareEngineer",
+      "salary": "700000",
+      "isMarried": true,
+      "id": "1636382988633"
+    }
+  ]
+}
