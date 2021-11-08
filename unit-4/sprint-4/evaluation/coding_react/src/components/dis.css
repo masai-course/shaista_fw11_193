@@ -1,0 +1,14 @@
+#myDiv{
+    display: none;
+    margin-left: 35%;
+}
+#myDiv1{
+    
+    display: block;
+    margin-left: 35%;
+}
+
+table, th, td {
+  border:1px solid black;
+  width: 500px;
+}
