@@ -1,0 +1,200 @@
+body{
+    background-color: aqua;
+}
+.nav{
+    position: absolute;
+left: 0%;
+right: 94.38%;
+top: 0%;
+bottom: 0%;
+
+background: #FFFFFF;
+box-shadow: 0px 0px 5px #E5E9F2;
+}
+.one{
+    position: absolute;
+left: 7.32%;
+right: 87.01%;
+top: 29.3%;
+bottom: 63.87%;
+width:60px;
+background: linear-gradient(180deg, #679CF6 0%, #4072EE 100%);
+box-shadow: 0px 5px 15px #ACB2C1;
+border-radius: 5px;
+transform: matrix(-1, 0, 0, 1, 0, 0);
+}
+.pic1{
+    position: absolute;
+ top: 10px;
+ right: 20px;
+
+}
+.pic2{
+  position: absolute;
+  top: 290px;
+  right: 16px;
+  width:60px;
+}
+.pic4{
+position: absolute;
+left: 30.04%;
+right: 96.33%;
+top: 45.54%;
+bottom: 52.54%;
+}
+.pic5{
+position: absolute;
+left: 30.04%;
+right: 96.33%;
+top: 52.38%;
+bottom: 45.61%;
+
+
+}
+.pic6{
+    position: absolute;
+left: 30.24%;
+right: 96.54%;
+top: 59.18%;
+bottom: 38.52%;
+
+
+}
+.pic3{
+    position: absolute;
+left: 30.03%;
+right: 96.4%;
+top: 66.11%;
+bottom: 31.59%;
+
+
+}
+.pic7{
+    position: absolute;
+left: 16.53%;
+right: 95.69%;
+top: 90.75%;
+bottom: 60.34%;
+
+background: #29CB97;
+border-radius: 20px;
+}
+.pic8{
+    position: absolute;
+left: 16.53%;
+right: 95.69%;
+top: 3.42%;
+bottom: 92.68%;
+border-radius: 50%;
+}
+.div1{
+    margin: 100px 50px 80px 150px;
+  width: 330px;
+  height: 400px;
+background-color: #E5E9F2;
+font-size: 10px;
+}
+.h1{
+    position: absolute;
+    width: 232px;
+    height: 43px;
+    top: 0px;
+    left: 120px;
+    right: 360px;
+    font-size: 30px;
+    font-family: Roboto;
+    font-weight: 400;
+    line-height: 42.19px;
+
+}
+.p1{
+    position: absolute;
+    font-size: 10px;
+   top:35px;
+   left: 350px;
+}
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+.move{
+    position: absolute;
+    margin-left: 400px;
+   top:40px;
+}
+.pc1{
+    position: absolute;
+    width:330px ;
+    height: 100px;
+    top: 100px;
+}
+.pc2{
+    position: absolute;
+ width:330px ;
+    height: 100px;
+       top: 200px;
+}
+.pc3{
+    position: absolute;
+ width:330px ;
+    height: 100px;
+       top: 300px;
+}
+.f{
+    float: right;
+}
