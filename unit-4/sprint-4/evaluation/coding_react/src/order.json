@@ -9,6 +9,21 @@
       "name": "Bananas",
       "status": false,
       "id": 2
+    },
+    {
+      "name": "bags",
+      "status": false,
+      "id": 3
+    },
+    {
+      "name": "boxes",
+      "status": false,
+      "id": 4
+    },
+    {
+      "name": "benches",
+      "status": false,
+      "id": 5
     }
   ]
 }

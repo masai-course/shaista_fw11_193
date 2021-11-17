@@ -1,0 +1,27 @@
+#box1 {
+    text-align: left;
+    padding-left:10px;
+    width:50%;
+}
+
+right_review {
+    flex : 1;
+    text-align: right;
+}
+
+#layout {
+    display: flex;
+    flex-direction: row;
+    padding:20px;
+    border:2px solid black;
+}
+
+#order {
+    border-top: 1px solid black;
+    text-align: right;
+    padding-right:20px;
+
+}
+#layout img{
+    width: 30px;
+}

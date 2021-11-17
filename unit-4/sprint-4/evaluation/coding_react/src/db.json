@@ -9,6 +9,31 @@
       "name": "pencils",
       "status": true,
       "id": 2
+    },
+    {
+      "name": "laps",
+      "status": true,
+      "id": 3
+    },
+    {
+      "name": "laptops",
+      "status": true,
+      "id": 4
+    },
+    {
+      "name": " Pencils",
+      "status": true,
+      "id": 5
+    },
+    {
+      "name": "Books",
+      "status": true,
+      "id": 6
+    },
+    {
+      "name": "benches",
+      "status": true,
+      "id": 7
     }
   ]
 }

@@ -1,0 +1,162 @@
+{
+    "products":[
+            {
+            "id":1,
+            "food_name": "2 Signature Veg Wraps at 289",
+            "img_src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTruvk4S2Snt1pnnZyVCoVaspjOnixXmjBl1_uOmE4tawnAlWVYdKGoqA60u-zoOUC-cNk&usqp=CAU",
+            "price": 250,
+            "rating": 3.2,
+            "votes":766,
+            "reviews":512,
+            "delivery":"up to 30 min",
+            "Accept":"card and cash",
+            "boughtTime": "296",
+            "description": "Amazing wraps and savings! What else can you ask for? Choose any two from our unique Signature Veg Wraps with delicious fillings & sauces all wrapped in a flaky paratha.",
+            "tags": [
+              "veg",
+              "snack",
+              "ct_amz_Meals",
+              "ct_amz_Combo"
+            ],
+            "veg_NonVeg": "veg",
+            "category": {
+              "$oid": "6152fd65091db0b8e304fd06"
+            },
+            "createdAt": {
+              "$date": "2021-09-28T11:39:22.154Z"
+            },
+            "updatedAt": {
+              "$date": "2021-09-28T11:39:22.154Z"
+            }
+          },{
+            "id": 2,
+            "food_name": "Smokey Fab Combo (Veg)",
+            "img_src": "https://product-assets.faasos.io/production/product/image_1618580131789_image_1618219032186_Fab%20%26%20Smokey%20Veg%20Combo%201%20Masala%20Paneer%20tikka%2B%201%20Jumbo%20Falafel%20Salsa%20Wrap.jpg",
+            "price": 198,
+            "rating": 2.1,
+            "votes":760,
+            "reviews":612,
+            "delivery":"up to 80 min",
+            "Accept":"card",
+            "boughtTime": "826",
+            "description": "(Veg Only) 1 Masala Paneer Tikka Wrap + 1 Jumbo Falafel Salsa Wrap . When flavourful surprises come knocking, you welcome them with open arms. Especially when they come with savings of Rs.137!",
+            "tags": [
+              "veg",
+              "wrap"
+            ],
+            "veg_NonVeg": "veg",
+            "category": {
+              "$oid": "6152fd4b091db0b8e304fd04"
+            },
+            "createdAt": {
+              "$date": "2021-09-28T11:40:54.475Z"
+            },
+            "updatedAt": {
+              "$date": "2021-09-28T12:13:58.909Z"
+            }
+          },{
+            "id": 3,
+            "food_name": "Fab & Creamy Combo",
+            "img_src": "https://product-assets.faasos.io/production/product/image_1618581012383_image_1603542783342_Resmi%20chicken%20kebab%20Wrap%20%2B%20Makhani%20Falafel%20Wrap.jpg",
+            "price": 198,
+            "rating": 1.2,
+            "votes":300,
+            "reviews":312,
+            "delivery":"up to 60 min",
+            "Accept": "Cash and Card",
+            "boughtTime": "338",
+            "description": "(Veg + Non-Veg) 1 Reshmi Chicken Kebab Wrap + 1 Makhani Falafel Wrap. Flavours that surprise and prices that amaze. Save Rs. 147 with this FAB combo!",
+            "tags": [
+              "Non veg",
+              "wrap"
+            ],
+            "veg_NonVeg": "Non veg",
+            "category": {
+              "$oid": "6152fd4b091db0b8e304fd04"
+            },
+            "createdAt": {
+              "$date": "2021-09-28T11:43:31.403Z"
+            },
+            "updatedAt": {
+              "$date": "2021-09-28T12:15:36.085Z"
+            }
+          },{
+            "id": 4,
+            "food_name": "Fab & Cheesy NonVeg Combo",
+            "img_src": "https://product-assets.faasos.io/production/product/image_1618581154570_image_1603542884429_Cheese%20melt%20chicken%20wrap%20%2B%20Double%20cheese%20meatball%20wrap.jpg",
+            "price": 209,
+            "rating": 4.1,
+            "votes":866,
+            "reviews":412,
+            "delivery":"up to 10 min",
+            "Accept": "cash",
+            "boughtTime": "749",
+            "description": "(Non-Veg Only) Cheese Melt Chicken Wrap + Double Cheese Meatball Wrap and a savings of Rs 150! Not easy to beat boredom? Indulge in our FAB combo to be surprised!",
+            "tags": [
+              "Non veg",
+              "wrap"
+            ],
+            "veg_NonVeg": "Non veg",
+            "category": {
+              "$oid": "6152fd4b091db0b8e304fd04"
+            },
+            "createdAt": {
+              "$date": "2021-09-28T11:46:20.163Z"
+            },
+            "updatedAt": {
+              "$date": "2021-09-28T12:17:42.190Z"
+            }
+          },{
+            "id": 5,
+            "food_name": "Fab & Loaded Veg Combo",
+            "img_src": "https://product-assets.faasos.io/production/product/image_1618581154570_image_1603542884429_Cheese%20melt%20chicken%20wrap%20%2B%20Double%20cheese%20meatball%20wrap.jpg",
+            "price": 209,
+            "rating": 4.1,
+            "votes":666,
+            "reviews":712,
+            "delivery":"up to 20 min",
+            "boughtTime": "292",
+            "Accept": "card",
+            "description": "(Veg Only) 1 Jumbo Paneer Chole Wrap + 1 Jumbo Falafel Salsa Wrap. When dill mange more but pockets say please no more, we come to the rescue! Save Rs. 181 with this FAB combo of",
+            "tags": [
+              "veg",
+              "wrap"
+            ],
+            "veg_NonVeg": "veg",
+            "category": {
+              "$oid": "6152fd4b091db0b8e304fd04"
+            },
+            "createdAt": {
+              "$date": "2021-09-28T11:47:27.609Z"
+            },
+            "updatedAt": {
+              "$date": "2021-09-28T12:18:32.600Z"
+            }
+          },{
+            "id": 6,
+            "food_name": "Exotic Fab Combo (Veg)",
+            "img_src": "https://product-assets.faasos.io/production/product/image_1618581269484_image_1618267295019_Mexican%20Potato%20Salsa%20%2B%20Makhni%20Falafel%20Wrap.jpg",
+            "price": 219,
+            "rating": 4.2,
+            "votes":866,
+            "reviews":612,
+            "delivery":"up to 40 min",
+            "Accept": "cash",
+            "boughtTime": "110",
+            "description": "(Veg Only) Get a fusion of flavours and a surprise of savings with this combo. 1 Mexican Potato Salsa Wrap + 1 Makhni Falafel Wrap",
+            "tags": [
+              "veg",
+              "wrap"
+            ],
+            "veg_NonVeg": "veg",
+            "category": {
+              "$oid": "6152fd4b091db0b8e304fd04"
+            },
+            "createdAt": {
+              "$date": "2021-09-28T11:48:32.788Z"
+            },
+            "updatedAt": {
+              "$date": "2021-09-28T12:23:18.489Z"
+            }
+        }]
+}

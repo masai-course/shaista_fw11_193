@@ -1,14 +1,38 @@
-#myDiv{
+
+body{
+    background-color: #282c34;
+    color: aliceblue;
+    }
+    #myDiv{
     display: none;
-    margin-left: 35%;
 }
 #myDiv1{
     
     display: block;
-    margin-left: 35%;
+    
 }
-
+.int{
+    width:300px;
+    height: 38px;
+    border-radius: 5px;
+    font-size: 25px;
+}
 table, th, td {
   border:1px solid black;
   width: 500px;
+}
+h1{
+    margin-left: 0%;
+    text-align: center;
+}
+.marg{
+margin-left: 35%;
+}
+button{
+ height: 39px;
+ border-radius: 5px;
+ background-color: black;
+ color: aliceblue;
+ width: 150px;
+ font-size: 20px;
 }

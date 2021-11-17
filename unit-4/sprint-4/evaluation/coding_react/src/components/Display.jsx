@@ -68,50 +68,63 @@ export function Inventory() {
     }
     return (
         <>
+        
+            <br/>
+            <h1>Add Items</h1>
             <div>
-                <input type="text" placeholder="Add item" onChange={(e) => {
+                <input className="int" type="text" placeholder="Add item" onChange={(e) => {
                     setText(e.target.value)
                 }} />
-                <button onClick={handledAddcurr}>current list</button>
-                <button onClick={handledAddord}>order list </button>
+                <button onClick={handledAddcurr}>Current list</button>
+                <button onClick={handledAddord}>Order list </button>
             </div>
-            <button onClick={display}>display current list</button>
+            <br/>
+             <br/>
+              <br/>
+               <br/>
+            <button onClick={display}>Display list</button>
 
             <div id="myDiv">
-            <h1>Current List </h1>
-                {data.map((items) => (
-                <table  key={items.id} className="box">
+              <h1> Current List </h1>
+               
+                    <div className="marg">
+                <table   className="box">
                     <tr>
                         <th>ITEMS</th>
                         <th>Status</th>  
                     </tr>
-                    <tr>
+                     {data.map((items) => (
+                    <tr key={items.id}>
                         <td>{items.name}</td>
                         <td> <input type="checkbox" value="true"/></td>
                     </tr>
-                   
+                    ))}
                 </table>
                
-                   
-                ))}
+                   </div>
+               
 
             </div>
             <div id="myDiv1">
-             {data1.map((items) => (
-                <table  key={items.id} className="box">
+            <h1> Order List </h1>
+           
+                 <div className="marg">
+                <table  className="box">
                     <tr>
                         <th>Items</th>
                         <th>Status</th>  
                     </tr>
-                    <tr>
+                      {data1.map((items) => (
+                    <tr  key={items.id}>
                         <td>{items.name}</td>
                         <td> <input type="checkbox"/></td>
                     </tr>
-                   
+                     ))}
                 </table>
+                  </div>
                
                    
-                ))}
+            
 
             </div>
         </>
