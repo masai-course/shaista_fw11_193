@@ -3,16 +3,13 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import {  AuthContextProvider } from './contexts/AuthContext';
-import { ThemContextProvider } from './contexts/ThemContext';
+import {BrowserRouter } from "react-router-dom"
 
 ReactDOM.render(
   <React.StrictMode>
-  <AuthContextProvider>
-  <ThemContextProvider>
+  <BrowserRouter>
     <App />
-    </ThemContextProvider>
-      </AuthContextProvider>
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );
