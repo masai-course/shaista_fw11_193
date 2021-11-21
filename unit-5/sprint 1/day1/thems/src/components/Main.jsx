@@ -31,7 +31,7 @@ export default function Main() {
   const styles = getStyles(mode);
   return (
     <div style={styles.app1}>
-      <h1 style={(styles.header, styles.text)}>Have a nice day... PAVAN KALYAN!</h1>
+      <h1 style={(styles.header, styles.text)}>Navbar</h1>
       <h2 style={styles.text}>
         Current theme is <span style={styles.theme}>{mode}</span> mode
       </h2>
