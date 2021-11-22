@@ -1,0 +1,11 @@
+table{
+    margin-left: 45%;
+}
+
+table tr td{
+    border: 1px solid black;
+  
+}
+table tr th{
+    border: 1px solid black;
+}

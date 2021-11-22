@@ -1,0 +1,51 @@
+.div{
+    width: 100%;
+    height: 90px;
+    background-color: rgb(23, 15, 54);
+}
+img{
+    border-radius: 50%;
+    float: left;
+    width: 4%;
+    margin-left: 50px;
+    margin-top: 20px;
+}
+h4{
+    color: white;
+    float: left;
+    margin-left:130px;
+    margin-top: 20px;
+        position: absolute;
+        font-size: 39px;
+
+}
+.f{
+      position: absolute;
+    margin-top: 25px;
+    display: flex;
+   margin-left: 75%;
+      justify-content: space-between;
+    width: 300px;
+    font-size: 20px;
+    color: rgb(244, 247, 247);
+}
+.sub1{
+    background-color: rgb(131, 136, 136);
+    display: none;
+    border-radius: 5px;
+}
+.sub1 p{
+  margin-top: 0%;
+  margin-bottom: 0%;
+  text-align: left;
+  font-size: 15px;
+  text-decoration: none;
+
+  font-style: oblique;
+}
+p  Link{
+    text-decoration: none;
+}
+.cat:hover .sub1{
+display: block;
+}
