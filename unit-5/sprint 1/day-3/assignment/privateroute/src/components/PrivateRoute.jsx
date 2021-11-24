@@ -1,6 +1,6 @@
 import { useContext } from "react"
 import { Redirect, Route } from "react-router"
-import { AuthContext } from "../contexts/Authcontext"
+import { AuthContext } from "../context/Authcontext"
 
 export const PrivateRoute=({children})=>{
     const {token} = useContext(AuthContext)
@@ -11,6 +11,6 @@ export const PrivateRoute=({children})=>{
     }
     return (
 
-    <Route path="/users/:id">{children}</Route>
+    <Route path="/dashboard">{children}</Route>
     )
 }

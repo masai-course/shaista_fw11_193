@@ -1,4 +1,5 @@
-.App {
+.App{
+  align-items: center;
   text-align: center;
 }
 
@@ -6,17 +7,21 @@
   height: 40vmin;
   pointer-events: none;
 }
+.Display{
+  display: flex;
+ 
+  margin-top: 30px;
+    width: 350px;
 
+     flex-direction: column;
+   float: left;
+   margin-left: 80px;
+  
+}
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
-}
-.div{
-  display: flex;
-  justify-content: space-between;
-  width: 300px;
-  margin-left: 40%;
 }
 
 .App-header {
