@@ -20,11 +20,6 @@ function Products() {
     useEffect(() => {
         fetchdata();
     }, [])
-
-
-
-
-
     return (
         <div >
             <div className="Display" >
