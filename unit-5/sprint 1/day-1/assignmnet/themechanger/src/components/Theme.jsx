@@ -10,18 +10,18 @@ import pc1 from "../images/pc1.png"
 import pc2 from "../images/pc2.png"
 import pc3 from "../images/pc3.png"
 import "./theme.css";
-import { useContext, useEffect } from "react"
+import { useContext } from "react"
 import { ThemContext } from "../contexts/ThemContext"
 export const Theme = () => {
     const { color ,handleTokenChange} = useContext(ThemContext);
      
-    const handle=()=>{
-                document.body.style.color="white"
-             handleTokenChange()
-             document.body.style.background=color
-             console.log(color)
-            }
-//     useEffect(() => {
+//     const handle=()=>{
+//                 document.body.style.color="white"
+//              handleTokenChange()
+//              document.body.style.background=color
+//              console.log(color)
+//             }
+// //     useEffect(() => {
 //     handle()
 //   },[ color]);
     
@@ -48,7 +48,15 @@ export const Theme = () => {
                 <p className="h1" >My Dashboard   </p>
                 <p className="p1">Dark Mode</p>
             </div>
-            <div className="move" onClick={handle}>
+            <div className="move" onClick={()=>{
+                document.body.style.color="white"
+             handleTokenChange()
+             document.body.style.background=color
+             console.log(color)
+            }
+            
+            
+            }>
                 <label class="switch">
                     <input type="checkbox" 
                     />

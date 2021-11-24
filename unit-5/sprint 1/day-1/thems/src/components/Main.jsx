@@ -12,7 +12,7 @@ const getStyles = (mode) => ({
     fontWeight: "400"
   },
   app1: {
-    height: "100%",
+    height: "600%",
     width: "100%",
     padding: 16,
     backgroundColor: theme[mode].backgroundColor
@@ -31,7 +31,7 @@ export default function Main() {
   const styles = getStyles(mode);
   return (
     <div style={styles.app1}>
-      <h1 style={(styles.header, styles.text)}>Navbar</h1>
+      <h1 style={(styles.header, styles.text)}>Theme changer</h1>
       <h2 style={styles.text}>
         Current theme is <span style={styles.theme}>{mode}</span> mode
       </h2>
