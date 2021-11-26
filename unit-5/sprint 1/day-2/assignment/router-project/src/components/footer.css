@@ -1,0 +1,21 @@
+.footer{
+    height: 30%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 23% 23% 23% 23%;
+    grid-gap: 2%;
+    background-color: #333;
+    margin: auto;
+    color: white;
+
+   left: 0;
+   bottom: 0;
+   width: 100%;
+}
+.link{
+    color: white;
+    text-decoration: none;
+}
+.img{
+    height: 15px;
+}

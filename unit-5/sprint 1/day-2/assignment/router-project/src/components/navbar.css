@@ -1,16 +1,16 @@
-.div{
+.div1{
     width: 100%;
     height: 90px;
     background-color: rgb(23, 15, 54);
 }
-img{
+.img1{
     border-radius: 50%;
     float: left;
     width: 4%;
     margin-left: 50px;
     margin-top: 20px;
 }
-h4{
+.h{
     color: white;
     float: left;
     margin-left:130px;
