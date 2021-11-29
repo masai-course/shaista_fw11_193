@@ -1,27 +1,27 @@
 import './App.css';
-import {Loginpage } from "./components/Loginpage"
 import {Data} from "./components/Data"
 import { Switch,Route, } from 'react-router';
-import { Link } from 'react-router-dom';
+
 import { Signup } from './components/Signup';
+import { Navbar } from './components/Navbar';
+import { Loginn } from './components/Loginn';
 function App() {
   return (
     <div className="App">
-    <Link to="/home">Home</Link>
-    <Link to="/login">Signup</Link>
-    <Link to ="/data"></Link>
+    <Navbar/>
     <Switch>
     {/* <Route exact path="/">
     <Home/>
     </Route> */}
     <Route path ="/signup">
-    <Loginpage/>
+     <Signup/>
+   
     </Route>
     <Route  path="/data">
     <Data/>
     </Route>
      <Route  path="/login">
-    <Signup/>
+     <Loginn/>
     </Route>
     </Switch>
     </div>
