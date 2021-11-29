@@ -3,7 +3,7 @@ import {Routes} from "./Routes/Route";
 function App() {
   return (
     <div className="App">
-     <h1>Hello Welcome to the show</h1>
+     <h1>todos using redux</h1>
       <Routes/>
     </div>
   );
