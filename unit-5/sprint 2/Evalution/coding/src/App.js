@@ -3,25 +3,25 @@ import {Loginpage } from "./components/Loginpage"
 import {Data} from "./components/Data"
 import { Switch,Route, } from 'react-router';
 import { Link } from 'react-router-dom';
-import { Home } from './components/Home';
+import { Signup } from './components/Signup';
 function App() {
   return (
     <div className="App">
     <Link to="/home">Home</Link>
-    <Link to="/login">Login</Link>
+    <Link to="/login">Signup</Link>
     <Link to ="/data"></Link>
     <Switch>
     {/* <Route exact path="/">
     <Home/>
     </Route> */}
-    <Route path ="/login">
+    <Route path ="/signup">
     <Loginpage/>
     </Route>
     <Route  path="/data">
     <Data/>
     </Route>
-     <Route  path="/home">
-    <Home/>
+     <Route  path="/login">
+    <Signup/>
     </Route>
     </Switch>
     </div>
