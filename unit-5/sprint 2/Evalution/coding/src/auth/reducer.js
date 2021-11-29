@@ -1,4 +1,5 @@
 import { LOGIN_FAILURE,LOGIN_SUCCESS } from "./actionType";
+var token ="xyb"
 const initialState={
     isAuth:token?true:false,
     token:token || ""

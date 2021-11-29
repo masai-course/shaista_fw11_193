@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Redirect } from "react-router";
 
 export function Login({handleLogin}){
     const [email,setEmail] =useState("");
@@ -7,6 +8,7 @@ export function Login({handleLogin}){
         e.preventDefault();
         let payload = {email,password}
         handleLogin(payload);
+        <Redirect to="/"></Redirect>
     }
     return(
         <div>
@@ -16,7 +18,8 @@ export function Login({handleLogin}){
          <br/>
         Password:<input onChange ={(e)=>setPassword(e.target.value)} type="password" placeholder="Enter your password"/>
         <br/>
-        <input type="submit" value="Submit"/>
+        <input type="submit" value="Submit" 
+        />
         </form>
         </div>
     )

@@ -1,3 +1,4 @@
-import {createStore,combineReducer} from 'redux';
+import {createStore} from 'redux';
 import { Authreducer } from './reducer';
-import { Reducer } from 'react';
+export const store = createStore(Authreducer);
+console.log(store.getState())
