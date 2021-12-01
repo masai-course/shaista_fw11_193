@@ -1,0 +1,8 @@
+.App {
+  font-family: sans-serif;
+  padding: 25px;
+}
+
+.ul-todos .done {
+  text-decoration: line-through;
+}
