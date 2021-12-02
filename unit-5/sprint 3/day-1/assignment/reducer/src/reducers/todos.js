@@ -9,6 +9,7 @@ export const initialState = {
 };
 
 export default function reducer(state, action) {
+   console.log(action.payload);
   switch (action.type) {
     case "ADD":
       return {
@@ -27,7 +28,7 @@ export default function reducer(state, action) {
         todos: state.todos.filter((item, index) => index !== action.payload)
       };
     case "TOGGLE_TODO":
-      return {
+      return{ 
         ...state,
         todos: state.todos.map((todo, index) => {
           if (index === action.payload) {
@@ -42,7 +43,9 @@ export default function reducer(state, action) {
     case "CHANGE_VIEW":
       return {
         ...state,
+       
         currentView: action.payload
+        
       };
     default:
       return state;
