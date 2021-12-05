@@ -1,0 +1,7 @@
+{
+  "scripts":{"builds":
+  "tsc index.ts"},
+  "dependencies": {
+    "typescript": "^4.5.2"
+  }
+}
