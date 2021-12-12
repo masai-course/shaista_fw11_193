@@ -22,73 +22,23 @@
     },
     {
       "status": false,
-      "title": "learn react-redux",
+      "title": "learn vue",
       "id": 5
     },
     {
       "status": false,
-      "title": "learn java",
+      "title": "learn react",
       "id": 6
     },
     {
       "status": false,
-      "title": "learn javascript",
+      "title": "learn vue",
       "id": 7
     },
     {
       "status": false,
-      "title": "learn typeScript",
+      "title": "learn redux",
       "id": 8
-    },
-    {
-      "status": false,
-      "title": "learn html",
-      "id": 9
-    },
-    {
-      "status": false,
-      "title": "learn css",
-      "id": 10
-    },
-    {
-      "status": false,
-      "title": "learn styled components",
-      "id": 11
-    },
-    {
-      "status": false,
-      "title": "learn html and css and js",
-      "id": 12
-    },
-    {
-      "status": false,
-      "title": "Learn vlsi",
-      "id": 13
-    },
-    {
-      "status": false,
-      "title": "learn Embedded systems",
-      "id": 14
-    },
-    {
-      "status": false,
-      "title": "learn Sillica Gel",
-      "id": 15
-    },
-    {
-      "status": false,
-      "title": "Learn Facebook",
-      "id": 16
-    },
-    {
-      "status": false,
-      "title": "learn whatsapp features",
-      "id": 17
-    },
-    {
-      "status": false,
-      "title": "Study about the react and redux documentation",
-      "id": 18
     }
   ]
 }

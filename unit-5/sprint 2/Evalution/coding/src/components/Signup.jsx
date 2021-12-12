@@ -10,7 +10,7 @@ export function Signup({handleLogin}){
   }
     return(
         <div className="data">
-        <h1>Sign up</h1>
+        <h1>Fill details to Signup</h1>
         <form >
          Name:<input type="text" placeholder="Enter your Name"/>
          <br/>
