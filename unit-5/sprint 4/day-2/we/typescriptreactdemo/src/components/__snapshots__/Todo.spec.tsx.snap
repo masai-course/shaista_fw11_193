@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`todos in document 1`] = `
+<div>
+  <div>
+    <input
+      placeholder="Enter todo"
+      type="text"
+    />
+    <button>
+      add todo
+    </button>
+  </div>
+</div>
+`;

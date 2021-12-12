@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form >
+    <label >Name</label> <br/>
+    <input type="text" class="name" placeholder="Enter name here"><br/>
+    <label>Email</label><br/>
+    <input type="email" class="email" placeholder="Enter email here"><br/>
+    <label>Select subject</label><br/>
+    <select name="subject">
+    <option value="engilsh">English</option>
+    <option value="hindi">Hindi</option>
+    <option value="maths">maths</option>
+    <option value="anyother">other</option>
+    </select><br/>
+    <input type="reset" />
+    <input type="submit" onclick="data(e)" value="submit">
+</form>
+<script>
+
+function data(e){
+    e.preventDefault();
+}
+</script>
+</body>
+</html>
+
+
+const formSchema = new mongoose.Schema({
+    name:{type:String},
+    email:{type:string},
+    subject:[{type:String}],
+})
+db.collect.insert()
+
+
