@@ -1,0 +1,28 @@
+{
+    "users":[
+        {
+            "first_name":"Shaista",
+            "Last_name":"Sulthana",
+            "DOB":"2-3-2001",
+            "Location":"India"
+        },
+          {
+            "first_name":"Shaaa",
+            "Last_name":"Shaik",
+            "DOB":"2-3-2000",
+            "Location":"India"
+        },
+          {
+            "first_name":"Raj",
+            "Last_name":"Sulthana",
+            "DOB":"2-3-2001",
+            "Location":"India"
+        },
+          {
+            "first_name":"Shaista",
+            "Last_name":"Sulthana",
+            "DOB":"2-3-2001",
+            "Location":"India"
+        }
+    ]
+}
