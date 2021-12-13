@@ -1,17 +1,17 @@
 
 import './App.css';
-//import { Fetch } from './components/Hooks';
+import { Fetch } from './components/Hooks';
 
-import { useMergeState } from './components/useMerge';
+//import { useMergeState } from './components/useMerge';
 //import { Custom } from './components/useTimeOut';
 
 
 function App() {
   return (
     <div className="App">
-    <Merge/>
+    {/* <Merge/> */}
     {/* <Custom/> */}
-   {/* <Fetch/> */}
+   <Fetch/>
     </div>
   );
 }

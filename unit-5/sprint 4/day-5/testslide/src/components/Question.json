@@ -1,0 +1,29 @@
+{
+    "questions" : [
+        {
+            "id" : 1,
+            "question" : "Write the abbreviation of JSON ?",
+            "answer" : "JSON Stands for Javascript Object Notations"
+        },
+        {
+            "id" : 2,
+            "question" : "Write the abbreviation of JSX ?",
+            "answer" : "JSX is a extension, JSX Stands for JavaScript and XML Documents"
+        },
+        {
+            "id" : 3,
+            "question" : "Whats is React ?",
+            "answer" : "React is Famous Javascript Library, It mainly used to create Front End Application Easily"
+        },
+        {
+            "id" : 4,
+            "question" : "Whats is Javascript ?",
+            "answer" : "Javascript is a scripting language, Javascript mainly help to create a complex functionality on webpage"
+        },
+        {
+            "id" : 5,
+            "question":"What is meant by DOM",
+            "answer" : "DOM Stand for Document Object Model, It mainly help us to render the change happen in a react application"   
+        }
+    ] 
+}

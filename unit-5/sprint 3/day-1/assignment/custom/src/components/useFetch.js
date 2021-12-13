@@ -1,10 +1,8 @@
 import { useEffect, useState } from "react";
-
 export function useFetch(url){
     const [loading,setLoad] = useState();
     const [ error,setErr] = useState();
     const [ data,setData] = useState();
-
     useEffect(()=>{
         setLoad(true);
         fetch(url)
