@@ -1,18 +1,18 @@
 /// <reference types="Cypress"/>
 
-describe("input form checking",() => {
-    beforeEach(() => {
-        cy.visit("http://localhost:3000")
-    })
-    it('Check if input tag exist or not',() => {
-        cy.visit("http://localhost:3000")
-        cy.get(".inputtext").should("exist")
-    })
+// describe("input form checking",() => {
+//     beforeEach(() => {
+//         cy.visit("http://localhost:3000")
+//     })
+//     it('Check if input tag exist or not',() => {
+//         cy.visit("http://localhost:3000")
+//         cy.get(".inputtext").should("exist")
+//     })
 
-    it("typing the value into the input box",() => {
-        cy.get(".inputtext").type('learn React').should("have.value","learn React")
-    })
-})
+//     it("typing the value into the input box",() => {
+//         cy.get(".inputtext").type('learn React').should("have.value","learn React")
+//     })
+// })
 
 
 describe("Checking about the todo Applications",() => {

@@ -4,8 +4,8 @@ import {Todo} from "./components/Todo";
 function App() {
   return (
     <div className="App">
-      <h1> welcome to the input form checking</h1>
-      <Inputform/>
+      <h1> TODO testing</h1>
+      {/* <Inputform/> */}
       <Todo/>
     </div>
   );
