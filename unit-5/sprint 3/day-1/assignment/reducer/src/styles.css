@@ -1,6 +1,8 @@
 .App {
   font-family: sans-serif;
   padding: 25px;
+  align-content: center;
+  align-items: center;
 }
 
 .ul-todos .done {

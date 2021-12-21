@@ -20,10 +20,10 @@ export default function TodoItem(props) {
   return (
     <Row>
       <Col span={24}>
-        <Input value={value} onChange={handleChange} style={{ width: "80%" }} />
+        <Input value={value} onChange={handleChange} style={{ width: "30%", marginLeft: "22%" }} />
         <Button
           onClick={handleSubmit}
-          style={{ width: "18%", marginLeft: "2%" }}
+          style={{ width: "10%", marginLeft: "1%" }}
           type="primary"
         >
           Add

@@ -14,7 +14,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Todo App With UseReducer</h1>
+      <h1 style={{marginLeft:"30%"}}>UseReducer</h1>
       <TodosDispatch.Provider value={dispatch}>
         <TodosWrapper todos={state.todos} currentView={state.currentView} />
       </TodosDispatch.Provider>
