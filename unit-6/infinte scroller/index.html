@@ -6,11 +6,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Scroller</title>
     <link rel="stylesheet" href="/index.css">
+    <style>
+    
+    #container{
+        height: 650px;
+    width: 400px;
+    background-color: aqua;
+    margin: auto;
+    text-align: center;
+    overflow: auto;
+    }
+    </style>
 </head>
 <body>
     <div id="container">
-    hii
+
     </div>
 </body>
-<script src="/index.js"></script>
+<script >
+
+var item = document.getElementById("container")
+var count = 1;
+var load = function(){
+    for(var i=0;i<25;i++){
+        var item1 = document.createElement('p');
+        item.style.fontSize="20px"
+        item1.style.lineHeight="10px"
+        item1.innerText=`Masai Students ${count++}`;
+        item.appendChild(item1)
+    }
+}
+document.getElementById("container").addEventListener('scroll',function(){
+    if(item.scrollTop + item.clientHeight != item.scrollHeight){
+        load();
+    }
+})
+load();
+</script>
 </html>
