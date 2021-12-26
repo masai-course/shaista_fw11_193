@@ -24,6 +24,7 @@ const handleAdd = () => {
         first : data.first,
         last : data.last,
         DOB : data.DOB,
+        Location: data.location,
     }
     setPost([...post, init])
     setTimeout(() => alert("Sucessfully registered"), 3000);

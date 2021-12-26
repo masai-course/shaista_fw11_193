@@ -2,12 +2,8 @@
 
 
 async function getData(url){
-
-
     let res = await fetch(url)
-
     let data = await res.json()
-
     return data
 }
 function append(data, place){

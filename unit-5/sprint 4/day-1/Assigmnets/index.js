@@ -6,13 +6,13 @@ const sub = (a,b) =>{
     return a-b;
 }
 const time =(duration)=>{
-      var milliseconds = parseInt((duration % 1000) / 100),
+    var milliseconds = parseInt((duration % 1000) / 100),
     seconds = Math.floor((duration / 1000) % 60),
     minutes = Math.floor((duration / (1000 * 60)) % 60),
     hours = Math.floor((duration / (1000 * 60 * 60)) % 24);
-   hours = (hours > 1) ?  hours + " hours" : hours + " hour";
-   minutes = (minutes > 1) ? minutes + " minutes" : minutes + " minute";
-  seconds = (seconds > 1) ?  seconds+ " seconds" : seconds +" second";
+    hours = (hours > 1) ?  hours + " hours" : hours + " hour";
+    minutes = (minutes > 1) ? minutes + " minutes" : minutes + " minute";
+    seconds = (seconds > 1) ?  seconds+ " seconds" : seconds +" second";
   return `${hours} ${minutes} ${seconds}`
 }
 

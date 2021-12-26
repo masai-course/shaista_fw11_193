@@ -29,49 +29,31 @@
     //3.append
 
     var timerId;
-
    let movies_div=document.getElementById("movies");
-
     async function searchMovies(n){
-
         let res = await fetch(`https://swapi.dev/api/people/?search=${n}`);
         let data=await res.json();
-        console.log("data:",data);
-
         var results=(data.results);
-      //  console.log(results.Search)
         return results;
     }
-
-
     function appendMovies(m){
-       // movies_div.innerHTML=null;
         m.forEach(({name,height,mass,hair_color,skin_color}) =>{
-          
             let p=document.createElement('p');
             p.innerText=name;
             document.body.append(movies_div)
             movies_div.append(p);
         });
     }
-
     async function main(){
-
         let name=document.getElementById("query").value;
         let movies= await searchMovies(name);
-       
-         console.log("movies:",movies);
         if(movies===undefined){
             return false;
         }
         appendMovies(movies);
-
         console.log("movies:",movies);
     }
-
     function debounce(func, delay){
-        let name=document.getElementById("query").value;
-       
         if(timerId){
             clearTimeout(timerId);
         }
