@@ -5,7 +5,10 @@ function multiply(a,b){
 
 function a(a){
     return function(b){
-      return a+b;
+      //return a+b;
+      return function(c){
+      return a+b+c;
+    }
     }
   }
 
@@ -14,4 +17,4 @@ function a(a){
 
 console.log(multiply(4, 3)); // Returns 12
 
-console.log(a(4)(3)); // Also returns 12
+console.log(a(4)(3)(5)); // Also returns 12
